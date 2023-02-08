@@ -12,7 +12,6 @@ internal class Program
         builder.Services.AddControllersWithViews();
 
         builder.Services.AddDependencies(builder.Configuration);
-        //services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
 
         var profiles = ProfileHelper.GetProfiles();
 
@@ -33,7 +32,6 @@ internal class Program
         {
             app.UseExceptionHandler("/Error/Error");
         }
-        //app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseStatusCodePagesWithReExecute("/Error/Error", "?code={0}"); // status page
         app.UseAuthentication();
