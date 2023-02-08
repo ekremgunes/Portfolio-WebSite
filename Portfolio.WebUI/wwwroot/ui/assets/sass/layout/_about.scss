@@ -1,0 +1,318 @@
+.about-us-block {
+  .mock-up-thumb {
+    margin-bottom: 35px;
+    padding-top: 15px;
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+  }
+  .mrb-55 {
+    margin-bottom: 45px;
+    @media (min-width: 992px) {
+      margin-bottom: 55px;
+    }
+  }
+  &.about-style-two {
+    .about-block-content {
+      position: relative;
+      .about-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        display: none;
+        @media (min-width: 1200px) {
+          display: block;
+        }
+      }
+      > .container {
+        position: relative;
+        z-index: 9;
+      }
+    }
+    .fanfact-promo-numbers {
+      margin-top: 45px;
+      @media (min-width: 992px) {
+        margin-top: 0;
+      }
+      @media (min-width: 1200px) {
+        margin-right: 40px;
+        margin-top: 120px;
+        margin-bottom: 120px;
+      }
+      @media (min-width: 1400px) {
+        margin-left: -60px;
+        margin-right: 85px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+      }
+      @media (min-width: 1620px) {
+        margin-left: -160px;
+        margin-right: 112px;
+      }
+    }
+    .about-content {
+      padding-right: 0;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 15px;
+        margin-top: -10px;
+      }
+      @media (min-width: 1200px) {
+        padding-left: 40px;
+        margin-top: -10px;
+      }
+      @media (min-width: 1400px) {
+        padding-left: 80px;
+      }
+      .heading {
+        @media (min-width: 1200px) {
+          padding-bottom: 10px;
+        }
+        @media (min-width: 1400px) {
+          padding-bottom: 20px;
+        }
+      }
+      .skill-list {
+        padding-top: 2px;
+        @media (min-width: 992px) {
+          padding-top: 0px;
+        }
+        @media (min-width: 1200px) {
+          padding-top: 15px;
+        }
+        @media (min-width: 1400px) {
+          padding-top: 25px;
+        }
+      }
+    }
+  }
+}
+.about-content {
+	@media (min-width: 992px) {
+    padding-right: 20px;
+  }
+	@media (min-width: 1200px) {
+    padding-right: 40px;
+  }
+	@media (min-width: 1400px) {
+    padding-right: 60px;
+  }
+  .heading {
+    margin-bottom: 12px;
+  }
+  .description {
+    font-family: $font_heading;
+    letter-spacing: 0.04em;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.62em;
+    margin-bottom: 15px;
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .author-sign {
+    padding-top: 5px;
+    @media (min-width: 992px) {
+      padding-top: 10px;
+    }
+    @media (min-width: 1200px) {
+      padding-top: 15px;
+    }
+  }
+}
+.fanfact-promo-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: $white_smoke;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  @media (min-width: 576px) and (max-width: 767px) {
+    padding: 30px;
+  }
+	@media (min-width: 768px) {
+    padding: 27px 20px;
+  }
+	@media (min-width: 992px) {
+    padding: 30px;
+  }
+	@media (min-width: 1200px) {
+    padding: 40px 30px;
+  }
+  .promo-number {
+    width: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    text-align: center;
+    border-top: 1px solid $color__border-three;
+    border-right: 1px solid $color__border-three;
+    padding: 25px 15px 22px;
+    @media (min-width: 768px) {
+      padding: 30px 15px 27px;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-top: 0px solid;
+    }
+    &:nth-child(2n) {
+      border-right: 0px solid;
+    }
+    .odometer {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 0.87em;
+      font-family: $font_heading;
+      color: $black;
+      @media (min-width: 992px) {
+        font-size: 48px;
+      }
+      @media (min-width: 1200px) {
+        font-size: 56px;
+      }
+      @media (min-width: 1400px) {
+        font-size: 62px;
+      }
+    }
+    .promo-title {
+      color: $color__primary;
+      font-size: 15px;
+      padding-top: 3px;
+      font-weight: 500;
+      margin-bottom: 0;
+      font-family: $font_body;
+      @media (min-width: 768px) {
+        font-size: 14px;
+      }
+      @media (min-width: 992px) {
+        font-size: 15px;
+      }
+      @media (min-width: 1200px) {
+        font-size: 16px;
+      }
+      @media (min-width: 1400px) {
+        padding-top: 0px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.skill-with-social {
+  padding-top: 40px;
+	@media (min-width: 768px) {
+    padding-top: 0px;
+  }
+	@media (min-width: 992px) {
+    margin-left: 15px;
+    padding-top: 10px;
+  }
+	@media (min-width: 1200px) {
+    margin-left: 30px;
+  }
+	@media (min-width: 1400px) {
+    margin-left: 45px;
+  }
+  .heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+    @media (min-width: 1200px) {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+  }
+  .skill-list {
+    margin-bottom: 40px;
+    @media (min-width: 1200px) {
+      margin-bottom: 55px;
+    }
+    @media (min-width: 1400px) {
+      margin-bottom: 65px;
+    }
+  }
+}
+.single-skill {
+  margin-bottom: 20px;
+  position: relative;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .skill-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3d3d3d;
+    margin-bottom: 8px;
+    @media (min-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+  .progress {
+    height: 5px;
+    overflow: visible;
+    background-color: #DBDBDB;
+    position: relative;
+    border-radius: 0;
+    .progress-bar {
+      background-color: $color__primary;
+      overflow: visible;
+      > span {
+        display: block;
+        position: absolute;
+        top: -31px;
+        right: 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #3d3d3d;
+        z-index: 2;
+        font-family: $font_heading;
+        @media (min-width: 1200px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.social-status .social-profile-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -5px;
+  > a {
+    color: $white;
+    font-size: 14px; 
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: $color__primary;
+    translate: all 0.25s;
+    margin: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    @media (min-width: 1200px) {
+      font-size: 16px; 
+      width: 45px;
+      height: 45px;
+    }
+    &:hover {
+      background-color: $black;
+    }
+  }
+}

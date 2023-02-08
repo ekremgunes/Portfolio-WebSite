@@ -1,0 +1,150 @@
+﻿@{
+    Layout = "_PanelLayout";
+    ViewBag.bg = "class=bg-secondary";
+}
+@model List<MessageListDto>
+@section page{
+    <li><span>Messages</span></li>
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Messages</h4>
+                <div class="data-tables datatable-primary">
+                    <table id="tabledatamsg" class="text-center">
+                        <thead class="text-capitalize">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                @foreach (var msg in Model)
+                                {
+                                    <tr  @if(@msg.isRead == true){
+                                        @ViewBag.bg
+                                        }>
+                                        
+                                        <td>@msg.senderName</td>
+                                        <td>@msg.senderMail</td>
+                                        <td style="max-width:16rem !important;">@msg.messageContent</td>
+                                        <td>@msg.date</td>
+                                        <td>
+                                            <a onclick="removeMessage(@msg.id,this)" href="javascript:void(0)">
+                                                <i class="ti-trash"></i>
+                                            </a>
+                                            @if (@msg.isRead == true)
+                                            {
+                                                <a onclick=readMessage(@msg.id,"false",this) href="javascript:void(0)"><i class="ti-eye"></i></a>
+                                            }
+                                            @if (@msg.isRead == false)
+                                            {
+                                                <a onclick=readMessage(@msg.id,"true",this) href="javascript:void(0)"><i class="ti-eye"></i></a>
+                                            }
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span style="display:none" class="infoAlert">You don't have a any message'</span>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section messages_active{
+    class="active"
+}
+@section links{    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+
+}
+@section datatable_scripts{
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tabledatamsg').DataTable();
+        });
+        function readMessage(id, read, element) {
+            if (id <= 0 || (read != "true" && read!= "false")) {
+                toastr.warning("Something went wrong")
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/ReadMessage',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        id: id,
+                        read: read
+                    },
+                    success: function (result) {
+                        if (result == "success")
+                            element.parentElement.parentElement.classList.toggle("bg-secondary")
+                        else
+                            toastr.error("Something went wrong ")
+
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+
+
+        }
+        function removeMessage(id, element) {
+            if (id <= 0 ) {
+                toastr.warning("Something went wrong")
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/DeleteMessage',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        if (result == "success"){
+                            element.parentElement.parentElement.remove()
+                            toastr.success("Message Deleted")
+                        }
+                        else{
+                        toastr.error("Something went wrong ")
+
+                        }
+
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+        }
+    </script>
+}

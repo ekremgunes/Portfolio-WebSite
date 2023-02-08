@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@await RenderSectionAsync("title",true) </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/ui/imgs/shortcut.png">
+    <link rel="stylesheet" href="~/dashboard/libraries/bootsrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/dashboard/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/dashboard/css/themify-icons.css">
+    <link rel="stylesheet" href="~/dashboard/css/metisMenu.css">
+    <link rel="stylesheet" href="~/dashboard/css/slicknav.min.css">
+    <link rel="stylesheet" href="~/dashboard/libraries/toastr/toastr.min.css">
+
+    <!-- others css -->
+    <link rel="stylesheet" href="~/dashboard/css/typography.css">
+    <link rel="stylesheet" href="~/dashboard/css/default-css.css">
+    <link rel="stylesheet" href="~/dashboard/css/styles.css">
+    <link rel="stylesheet" href="~/dashboard/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/dashboard/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+
+
+    @RenderBody()
+
+    @*alert*@
+    <div style="display:none">
+        @Html.Raw(TempData["alerts"])
+    </div>
+    <!-- jquery latest version -->
+    <script src="~/dashboard/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/dashboard/libraries/bootsrap/popper.min.js"></script>
+    <script src="~/dashboard/libraries/bootsrap/bootstrap.min.js"></script>
+    <script src="~/dashboard/js/metisMenu.min.js"></script>
+    <script src="~/dashboard/libraries/jquery/jquery.slimscroll.min.js"></script>
+    <script src="~/dashboard/libraries/jquery/jquery.slicknav.min.js"></script>
+    <script src="~/dashboard/libraries/toastr/toastr.min.js"></script>
+
+    <script src="~/dashboard/libraries/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/dashboard/libraries/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        const Infoalerts = document.querySelectorAll(".infoAlert")
+        Infoalerts.forEach((alert) => {
+            toastr.info(alert.textContent)
+        })
+        const Successalerts = document.querySelectorAll(".successAlert")
+        Successalerts.forEach((alert) => {
+            toastr.success(alert.textContent)
+        })
+        const Warningsalerts = document.querySelectorAll(".warningAlert")
+        Warningsalerts.forEach((alert) => {
+            toastr.warning(alert.textContent)
+        })
+        const Erroralerts = document.querySelectorAll(".errorAlert")
+        Erroralerts.forEach((alert) => {
+            toastr.error(alert.textContent)
+        })
+
+    </script>
+
+    <!-- others plugins -->
+    <script src="~/dashboard/js/plugins.js"></script>
+    <script src="~/dashboard/js/scripts.js"></script>
+        <script>
+        const input = document.getElementById("password_input");
+
+        function passwordDisplay() { 
+            if (input.attributes["type"].value == "text") {
+                input.attributes["type"].value = "password"
+            }else{
+                input.attributes["type"].value = "text"
+            }
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+/*-------------------------------------------------
+    [ ## Post, Page, Comments Table ]
+*/
+body:not(.woocommerce-page),
+body:not(.bbpress),
+body:not(.buddypress) {
+	.article-content {
+		table {
+			margin-bottom: 30px;
+			td, th {
+				border: 1px solid $gainsboro;
+				padding: 15px;
+			}
+		}
+	}
+}
+
+.comment-content {
+	table {
+		margin-bottom: 30px;
+		td, th {
+			border: 1px solid $gainsboro;
+			padding: 15px;
+		}
+	}
+}

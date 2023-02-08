@@ -1,0 +1,39 @@
+﻿@model AppUserRegisterDto
+@{
+    Layout = "_AccountLayout";
+}
+@section title{
+    Register
+}
+    <div style="background :#19111c;" class="login-area login-bg">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form asp-action="Register" asp-controller="Account" method="post" validate>
+                    <div class="login-form-head">
+                        <h4>Register</h4>
+                        <p>Hello Sir, Sign in and start managing your Admin</p>
+                    </div>
+                    <div class="login-form-body">
+                    <div class="text-danger text-center m-1 mb-3" asp-validation-summary="All"></div>
+
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">User Name</label>
+                            <input asp-for="@Model.Name" type="text" >
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input asp-for="@Model.Password" type="password" id="password_input">
+                            <i onclick="passwordDisplay()" class="ti-eye"></i>
+                        </div>
+
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

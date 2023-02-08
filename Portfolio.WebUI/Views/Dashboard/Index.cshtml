@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Dashboard</span></li>
+}
+<div  class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-6 mt-5 mb-3">
+                <div class="card">
+                    <div class="seo-fact sbg1">
+                        <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                        <div class="p-4 d-flex justify-content-between align-items-center">
+                            <div class="seofct-icon"><i class="ti-thumb-up"></i> Visitors</div>
+                            <h2>@ViewBag.visitorCount</h2>
+                        </div>
+                        <canvas id="seolinechart1" style="display: block; width: 439px; height: 73px;" class="chartjs-render-monitor" width="439" height="73"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-md-5 mb-3">
+                <div class="card">
+                    <div class="seo-fact sbg2">
+                        <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                        <div class="p-4 d-flex justify-content-between align-items-center">
+                            <div class="seofct-icon"><i class="ti-share"></i> Visitor Interaction</div>
+                            <h2>@ViewBag.visitorInteraction</h2>
+                        </div>
+                        <canvas id="seolinechart2" style="display: block; width: 439px; height: 73px;" class="chartjs-render-monitor" width="439" height="73"></canvas>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-6 mb-3 mb-lg-0">
+                <div class="card">
+                    <div class="seo-fact sbg3">
+                        <div class="p-4 d-flex justify-content-between align-items-center">
+                            <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                            <div class="seofct-icon">Contents </div>
+                            <p style="text-align:end;font-size:x-large;color:white;">@ViewBag.contents</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="seo-fact sbg4">
+                        <div class="p-4 d-flex justify-content-between align-items-center">
+                            <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                            <div class="seofct-icon">Details</div>
+                            <p style="text-align:end;font-size:x-large;color:white;">@ViewBag.details</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<br>
+@section home_active{
+    class="active"
+}

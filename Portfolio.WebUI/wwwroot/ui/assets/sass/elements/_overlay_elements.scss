@@ -1,0 +1,100 @@
+/*-------------------------------------------------
+    [ ## Overlay Element ]
+*/
+.bg-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.bg-fixed {
+	background-attachment: fixed;
+}
+.bg-image-right {
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+}
+.bg-image-100 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.hg-background {
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: -2;
+}
+.bg-overlay {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		background-color: $black;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 2;
+		opacity: 0.6;
+	} 
+	> div {
+		position: relative;
+		z-index: 2;
+	}
+	&.overlay-image-one:before {
+		background: url('../images/bg/overlay-1.png') no-repeat center center / cover;
+		opacity: 1;
+	}
+}
+.bg-overlay-primary {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		background-color: $color__primary;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		opacity: 0.4;
+	}
+	> div {
+		position: relative;
+		z-index: 2;
+	}
+}
+.bg-overlay-gradient {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		background: -webkit-linear-gradient(0deg, $black, rgba($black, 0.5));
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		// opacity: 0.5;
+	}
+	> div {
+		position: relative;
+		z-index: 2;
+	}
+}

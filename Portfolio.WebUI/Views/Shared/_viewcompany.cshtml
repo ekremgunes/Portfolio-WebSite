@@ -1,0 +1,17 @@
+@model ContentListDto;
+
+<div>
+    <a class="portfolio-item" href="/Home/ContentDetail?DetailId=@Model.id">
+        <figure  class="portfolio-thumb">
+            <img src="~/imgs/@Model.imagePath" alt="Resim bulunamadı">
+        </figure><!-- /.portfolio-thumb -->
+        <div class="overlay-wrapper">
+            <div class="overlay"></div><!-- /.overlay -->
+            <div class="portfolio-info">
+                <small class="cat"></small>
+                <h3 class="heading">@Model.contentName</h3>
+            </div><!-- /.portfolio-info -->
+        </div><!-- /.overlay-wrapper -->
+    </a><!-- /.portfolio-item -->
+</div>
+

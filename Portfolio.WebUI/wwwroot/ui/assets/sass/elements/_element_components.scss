@@ -1,0 +1,183 @@
+/*-------------------------------------------------
+    [ ## Waves Effect ]
+*/
+.waves-effect {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-repeat: repeat-x !important;
+	@media only screen and (max-width: 1366px) {
+		background-size: cover;
+	}
+	&.top {
+		top: -2px;
+		height: 185px;
+	}
+	&.bottom {
+		bottom: -2px;
+		height: 175px;
+	}
+}
+
+/*-------------------------------------------------
+	[ ## Carousel Align Center ]
+*/
+.carousel-align-center {
+	position: relative;
+	.owl-nav > div {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50px);
+						transform: translateY(-50px);
+		&.owl-prev {
+			left: -90px;
+			@media only screen and (max-width: 1620px) {
+				left: -75px;
+			}
+			@media only screen and (max-width: 1366px) {
+				left: -15px;
+			}
+			@media only screen and (min-width: 768px) and (max-width: 991px) {
+				left: -22px;
+			}
+		}
+		&.owl-next {
+			right: -90px;
+			@media only screen and (max-width: 1620px) {
+				right: -75px;
+			}
+			@media only screen and (max-width: 1366px) {
+				right: -15px;
+			}
+			@media only screen and (min-width: 768px) and (max-width: 991px) {
+				right: -22px;
+			}
+		}
+	}
+}
+/*-------------------------------------------------
+	[ ## Carousel Circle ]
+*/
+.carousel-nav-circle {
+	position: relative;
+	.owl-nav > div {
+		width: 45px;
+		height: 45px;
+		font-size: 18px;
+		background-color: $white;
+		border: 1px solid $color__border-three;
+		border-radius: 50%;
+		color: $black;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		margin: 3px;
+		-webkit-transition: all 0.3s;
+		transition: all 0.3s;
+		@media only screen and (max-width: 575px) {
+			width: 38px;
+			height: 38px;
+			font-size: 15px;
+		}
+		&:hover {
+			background-color: $black;
+			border-color: $black;
+			color: $white;
+		}
+	}
+}
+.carousel-nav-center .owl-nav > div {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	&.owl-next {
+		right: 0;
+	}
+	&.owl-prev {
+		left: 0;
+	}
+}
+	
+	.carousel-arrow {
+	.owl-nav > div {
+		font-size: 60px;
+		color: $suva_grey;
+		-webkit-transition: all 0.25s;
+		transition: all 0.25s;
+		@media only screen and (max-width: 991px) {
+			font-size: 30px;
+		}
+		&:hover {
+			color: $color__primary;
+		}
+		&.owl-prev {
+			left: -60px;
+			@media only screen and (max-width: 1280px) {
+				left: 0px;
+			}
+			@media only screen and (max-width: 1199px) {
+				left: -30px;
+			}
+			@media only screen and (max-width: 991px) {
+				left: -15px;
+			}
+		}
+		&.owl-next {
+			right: -60px;
+			@media only screen and (max-width: 1280px) {
+				right: 0px;
+			}
+			@media only screen and (max-width: 1199px) {
+				right: -30px;
+			}
+			@media only screen and (max-width: 991px) {
+				right: -15px;
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------
+    [ ## Scroll Top ]
+*/
+.topbutton {
+	color: $white;
+	bottom: 50px;
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	position: fixed;
+	right: 20px;
+	text-align: center;
+	width: 60px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	z-index: 999;
+	font-size: 20px;
+	border-radius: 50%;
+	background-color: $color__primary;
+	&.btn-show {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	&.btn-hide {
+		opacity: 0;
+		-webkit-transform: translateY(40px);
+		transform: translateY(40px);
+	}
+	&:hover {
+		color: $white !important;
+		opacity: 0.9;
+	}
+	&:focus {
+		color: $white !important;
+	}
+}

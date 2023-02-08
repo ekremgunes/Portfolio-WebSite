@@ -1,0 +1,125 @@
+.services-items-list {
+	margin-bottom: -20px;
+	@media (min-width: 768px) {
+		margin-bottom: -30px;
+	}
+}
+
+.service-item {
+	position: relative;
+	padding: 15px 15px 15px 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	margin-bottom: 20px;
+	-webkit-transition: all 0.25s linear 0ms;
+	transition: all 0.25s linear 0ms;
+	background-color: $white_smoke_two;
+	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	@media (min-width: 768px) {
+		margin-bottom: 30px;
+	}
+	@media (min-width: 1200px) {
+		padding: 20px 15px 20px 0;
+	}
+	@media (min-width: 1400px) {
+		padding: 25px 15px 25px 0;
+	}
+	.service-icon {
+		width: 80px;
+		-ms-flex-negative: 0;
+		    flex-shrink: 0;
+		border-right: 1px solid $color__border-two;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-transition: all 0.25s linear 0ms;
+		transition: all 0.25s linear 0ms;
+		height: 45px;
+		@media (min-width: 1200px) {
+			width: 88px;
+			height: 50px;
+		}
+		@media (min-width: 1400px) {
+			width: 100px;
+			height: 55px;
+		}
+		img {
+			-webkit-transition: all 0.1s linear 0ms;
+			transition: all 0.1s linear 0ms;
+			-webkit-transform: scale(0.75);
+			        transform: scale(0.75);
+			@media (min-width: 1200px) {
+				-webkit-transform: scale(0.85);
+				        transform: scale(0.85);
+			}
+			@media (min-width: 1400px) {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+			}
+		}
+	}
+	.title {
+		color: $black;
+		font-size: 20px;
+		line-height: 1.25em;
+		margin-bottom: 0;
+		font-weight: 700;
+		padding-left: 40px;
+		-webkit-transition: all 0.15s linear 0ms;
+		transition: all 0.15s linear 0ms;
+		position: relative;
+		@media (min-width: 1200px) {
+			font-size: 22px;
+		}
+		@media (min-width: 1400px) {
+			font-size: 25px;
+			padding-left: 45px;
+		}
+		&:before {
+			position: absolute;
+			content: '\f054';
+			font-family: $font-awesome-free;
+			font-size: 13px;
+			padding: 0;
+			left: 20px;
+			top: 1px;
+			color: inherit;
+			-webkit-transition: all 0.15s linear 0ms;
+			transition: all 0.15s linear 0ms;
+			@media (min-width: 1400px) {
+				left: 25px;
+			}
+		}
+	}
+	&:hover {
+		background-color: $color__primary;
+		.title { 
+			color: $white;
+			&:before {
+				font-size: 16px;
+				@media (min-width: 1400px) {
+					font-size: 18px;
+				}
+			}
+		}
+		.service-icon {
+			border-color: rgba($white, 0.4);
+			img {
+				-webkit-filter: invert(1);
+				        filter: invert(1);
+			}
+		}
+	}
+}

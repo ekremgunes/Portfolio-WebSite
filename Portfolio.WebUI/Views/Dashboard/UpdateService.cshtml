@@ -1,0 +1,61 @@
+﻿@model ServiceUpdateDto
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Update Service</span></li>
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Update Service</h4>
+                <form asp-controller="Dashboard" asp-action="UpdateService" method="post" novalidate="">
+                    <div class="mb-4">
+                        <label asp-for="@Model.serviceName">Service Name</label>
+                        <input class="form-control" type="text" asp-for="@Model.serviceName">
+                        <span class="text-danger" asp-validation-for="@Model.serviceName"></span>
+                    </div>
+
+                    <div class="mb-4 ">
+                        <label asp-for="@Model.rank">Rank</label>
+                        <input class="form-control" type="number" min="1" max="101"  asp-for="@Model.rank">
+                        <span class="text-danger" asp-validation-for="@Model.rank"></span>
+                    </div>
+                    @for (int i = 2; i < 7; i++)
+                    {
+                        <div class="custom-control pt--10 mb-1 custom-radio custom-control-inline">
+                            <input 
+                               asp-for="@Model.iconPath"
+                               id="@((i).ToString() + "iconPath")"
+                               type="radio"                               
+                               value="@((i).ToString() + ".png")" 
+                               class="custom-control-input"
+                            >
+                            <label class="custom-control-label" for="@((i).ToString() + "iconPath")">
+                                <img max-width="44px" src="/imgs/ServiceIcons/@((i).ToString() + ".png")" />
+
+                            </label>
+                        </div>
+                        <br>
+                    }
+                    <span class="text-danger mb-2 " asp-validation-for="@Model.iconPath"></span>
+                    <br>
+                    <div class="mb-3">
+                        <label asp-for="@Model.isActive">Is Active</label>
+                        <input class="custom-checkbox" type="checkbox" asp-for="@Model.isActive">
+                        <br />
+                        <span class="text-danger" asp-validation-for="@Model.isActive"></span>
+                    </div>
+                    
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section services_active{
+    class="active"
+}
+

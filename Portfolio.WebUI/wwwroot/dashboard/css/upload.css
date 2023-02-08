@@ -1,0 +1,64 @@
+﻿
+#ImagesDiv .PictureItem {
+    position: relative;
+}
+
+#ImagesDiv .PictureItem .item {
+   text-align: center;
+   padding: 5px;
+   height: 11rem;
+   margin: .3rem;
+}
+
+.ui-state-highlight {
+    height: 160px;
+    line-height: 160px;
+    border: 1px dashed #fcd80d;
+    background-color: #fcfacb
+}
+
+#ImagesDiv .PictureItem .UrunResimSil {
+    position: absolute;
+    right: 4px;
+    top: 13px;
+    padding: .2rem;
+    padding-right: .4rem;
+    padding-left: .4rem;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+    z-index: 90;
+}
+
+.ImageBG {
+    width: 100%;
+    height: 11rem;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
+.sayi {
+    font-size: .7rem;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-weight: normal !important;
+    text-align: center;
+    z-index: 90;
+}
+
+.multi-button{
+     background-color: #3a3d85f3;
+     color: white;
+     padding: .8rem;
+     padding-right: 1rem;
+     padding-left: 1rem;
+     border-radius: .2rem;
+     margin-top: .4rem;
+     margin-bottom: 1rem;
+}

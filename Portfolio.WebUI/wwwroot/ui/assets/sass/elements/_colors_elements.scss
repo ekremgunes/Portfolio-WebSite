@@ -1,0 +1,361 @@
+/*-------------------------------------------------
+    [ ## Color Element ]
+*/
+.color-primary {
+	color: $color__primary;
+}
+.color-secondary {
+	color: $color__secondary !important;
+}
+.color-white {
+	color: $white;
+}
+.color-white-im {
+	color: $white !important;
+}
+.color-orange {
+	color: $orange !important;
+}
+.color-green {
+	color: $green !important;
+}
+.color-snow {
+	color: $snow;
+}
+.color-zumthor {
+	color: $zumthor;
+}
+.color-white-smoke {
+	color: $white_smoke;
+}
+.color-gainsboro {
+	color: $gainsboro;
+}
+.color-silver {
+	color: $silver;
+}
+.color-dim-gray {
+	color: $dim_gray;
+}
+.color-dim-gray-im {
+	color: $dim_gray !important;
+}
+.color-gray {
+	color: $gray;
+}
+.color-suva-grey {
+	color: $suva_grey;
+}
+.color-matterhorn {
+	color: $matterhorn;
+}
+.color-night-rider {
+	color: $night_rider;
+}
+.color-eclipse {
+	color: $eclipse;
+}
+.color-blue-violet {
+	color: $blue_violet;
+}
+.color-medium-slate-blue {
+	color: $medium_slate_blue;
+}
+.color-soft-nero {
+	color: $soft_nero;
+}
+.color-nero {
+	color: $nero;
+}
+.color-black {
+	color: $black;
+}
+.color-hr-dv-orange {
+	color: $harley_davidson_orange;
+}
+.color-deep-cerise {
+	color: $deep_cerise;
+}
+.color-zinnwaldite {
+	color: $zinnwaldite;
+}
+.color-silver-tree {
+	color: $silver_tree;
+}
+.color-medium-purple {
+	color: $medium_purple;
+}
+.color-purple {
+	color: $purple !important;
+}
+.color-curious-blue {
+	color: $curious_blue;
+}
+.text-white {
+	color: $white;
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: $white !important;
+	}
+}
+/*-------------------------------------------------
+    [ ## Background Element ]
+*/
+.bg-white {
+	background-color: $white;
+}
+.bg-snow {
+	background-color: $snow;
+}
+.bg-zumthor {
+	background-color: $zumthor;
+}
+.bg-lavender {
+	background-color: $lavender;
+}
+.bg-white-smoke {
+	background-color: $white_smoke;
+}
+.bg-footer-bg {
+	background-color: $color__footer-bg;
+}
+.bg-gainsboro {
+	background-color: $gainsboro;
+}
+.bg-silver {
+	background-color: $silver;
+}
+.bg-dim-gray {
+	background-color: $dim_gray;
+}
+.bg-gray {
+	background-color: $gray;
+}
+.bg-suva-grey {
+	background-color: $suva_grey;
+}
+.bg-green {
+	background-color: $green;
+}
+.bg-matterhorn {
+	background-color: $matterhorn;
+}
+.bg-golden {
+	background-color: $golden;
+}
+.bg-turquoise {
+	background-color: $turquoise;
+}
+.bg-night-rider {
+	background-color: $night_rider;
+}
+.bg-eclipse {
+	background-color: $eclipse;
+}
+.bg-blue-violet {
+	background-color: $blue_violet;
+}
+.bg-medium-slate-blue {
+	background-color: $medium_slate_blue;
+}
+.bg-soft-nero {
+	background-color: $soft_nero;
+}
+.bg-nero {
+	background-color: $nero;
+}
+.bg-soft-black {
+	background-color: $soft_black;
+}
+.bg-black {
+	background-color: $black;
+}
+.bg-hr-dv-orange {
+	background-color: $harley_davidson_orange;
+}
+.bg-deep-cerise {
+	background-color: $deep_cerise;
+}
+.bg-black-russian {
+	background-color: $black_russian;
+}
+.bg-midnight-express {
+	background-color: $midnight_express;
+}
+.bg-zinnwaldite {
+	background-color: $zinnwaldite;
+}
+.bg-silver-tree {
+	background-color: $silver_tree;
+}
+.bg-medium-purple {
+	background-color: $medium_purple;
+}
+.bg-curious-blue {
+	background-color: $curious_blue;
+}
+.bg-primary {
+	background-color: $color__primary !important;
+}
+/*-------------------------------------------------
+    [ ## Extra Background ]
+*/
+.bar-blue-violet .swiper-scrollbar-drag {
+	background-color: $blue_violet;
+}
+
+/*-------------------------------------------------
+    [ ## SVG Fill ]
+*/
+.svg-white {
+	path {
+		fill: $white;
+	}
+}
+.svg-snow {
+	path {
+		fill: $snow;
+	}
+}
+.svg-white-smoke {
+	path {
+		fill: $color__secondary;
+	}
+}
+.svg-gainsboro {
+	path {
+		fill: $gainsboro;
+	}
+}
+.svg-silver {
+	path {
+		fill: $silver;
+	}
+}
+.svg-dim-gray {
+	path {
+		fill: $dim_gray;
+	}
+}
+.svg-gray {
+	path {
+		fill: $gray;
+	}
+}
+.svg-suva-grey {
+	path {
+		fill: $suva_grey;
+	}
+}
+.svg-matterhorn {
+	path {
+		fill: $matterhorn;
+	}
+}
+.svg-night-rider {
+	path {
+		fill: $night_rider;
+	}
+}
+.svg-eclipse {
+	path {
+		fill: $eclipse;
+	}
+}
+.svg-blue-violet {
+	path {
+		fill: $blue_violet;
+	}
+}
+.svg-soft-nero {
+	path {
+		fill: $soft_nero;
+	}
+}
+.svg-nero {
+	path {
+		fill: $nero;
+	}
+}
+.svg-soft-black {
+	path {
+		fill: $soft_black;
+	}
+}
+.svg-black {
+	path {
+		fill: $black;
+	}
+}
+
+/*-------------------------------------------------
+    [ ## Social Element ]
+*/
+.fb-color {
+	color: #3b5998;
+}
+.fb-bg {
+	background-color: #3b5998;
+}
+.tw-color {
+	color: #1da1f2;
+}
+.tw-bg {
+	background-color: #1da1f2;
+}
+.yt-color {
+	color: #ff0000;
+}
+.yt-bg {
+	background-color: #ff0000;
+}
+.in-color {
+	color: #c32aa3;
+}
+.in-bg {
+	background-color: #c32aa3;
+}
+.pin-color {
+	color: #bd081c;
+}
+.pin-bg {
+	background-color: #bd081c;
+}
+.lid-color {
+	color: #007bb5;
+}
+.lid-bg {
+	background-color: #007bb5;
+}
+.gplus-color {
+	color: #db4437;
+}
+.gplus-bg {
+	background-color: #db4437;
+}
+.drib-color {
+	color: #ea4c89;
+}
+.drib-bg {
+	background-color: #ea4c89;
+}
+.drib-color {
+	color: #ea4c89;
+}
+.drib-bg {
+	background-color: #ea4c89;
+}
+.dbart-color {
+	color: #05cc47;
+}
+.dbart-bg {
+	background-color: #05cc47;
+}
+.bh-color {
+	color: #053eff;
+}
+.bh-bg {
+	background-color: #053eff;
+}

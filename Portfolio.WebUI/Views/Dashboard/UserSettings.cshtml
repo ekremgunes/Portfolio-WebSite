@@ -1,0 +1,96 @@
+﻿@model UserSettingsModel
+@{
+    Layout = "_PanelLayout";
+}
+@section user_settings_active{
+    class="active"
+}
+@section page{
+    User Settings
+}
+@*change password form*@
+<div class="card mt-2">
+    <div class="card-body">
+        <h4 class="header-title">Reset Password</h4>
+
+        <form asp-controller="Account" asp-action="ResetPassword" method="post">
+            <div class="mb-4">
+                <label asp-for="@Model.Name">Name</label>
+                <input class="form-control" type="text" asp-for="@Model.Name">
+                <span class="text-danger" asp-validation-for="@Model.Name"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="@Model.oldPassword">Old Password</label>
+                <input class="form-control" type="text" asp-for="@Model.oldPassword">
+                <span class="text-danger" asp-validation-for="@Model.oldPassword"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="@Model.Password">Password</label>
+                <input class="form-control" type="password" asp-for="@Model.Password">
+                <span class="text-danger" asp-validation-for="@Model.Password"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="@Model.RePassword">RePassword</label>
+                <input class="form-control" type="password" asp-for="@Model.RePassword">
+                <span class="text-danger" asp-validation-for="@Model.RePassword"></span>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+@*change name form with ajax*@
+<div class="card mt-5">
+    <div class="card-body">
+        <h4 class="header-title">Change Name</h4>
+        <div class="mb-4">
+            <label for="oldName">Old Name</label>
+            <input id="oldName" name="oldName" class="form-control" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="newName">New Name</label>
+            <input id="newName" name="newName" class="form-control" type="text">
+        </div>
+
+        <div>
+            <button onclick="changeName()"  type="" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        function changeName() {
+            var name = document.getElementById("oldName").value;
+            var newName = document.getElementById("newName").value;
+
+            if (name.length > 3 && newName.length > 3) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/UpdateName',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        oldName: name,
+                        newName: newName
+                    },
+                    success: function (result) {
+                        if (result == "success") {
+                            window.location.replace("/Dashboard/Index")
+                        }
+                        else {
+                            toastr.warning("Something went wrong ")
+                        }
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+            else {
+                toastr.warning("I can see you didn't enter these")
+            }
+        }
+    </script>
+}

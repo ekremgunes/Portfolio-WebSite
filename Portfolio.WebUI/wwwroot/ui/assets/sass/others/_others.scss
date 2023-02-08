@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+# Blog Single
+--------------------------------------------------------------*/
+@import "blog_single";
+
+
+.dark-light-switcher.s_active {
+    right: -180px;
+}
+.dark-light-switcher {
+    position: fixed;
+    right: 0px;
+    z-index: 22;
+    width: 180px;
+    background-color: #f0eeee;
+    box-shadow: 3px 3px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    padding: 25px 20px;
+    top: 25%;
+    transition: all 0.3s;
+}
+.dark-light-switcher .switcher-btn {
+    position: absolute;
+    left: -45px;
+    width: 45px;
+    height: 45px;
+    background-color: #f0eeee;
+    top: 25px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    color: #101010;
+}
+.dark-light-switcher .switcher-btn > span {
+    animation: rotate360 linear 5s infinite;
+}
+.dark-light-switcher-inner .btn {
+    transition: all 0.3s;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 35px;
+    color: #000;
+}
+.dark-light-switcher-inner .btn.btn-dark {
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #101010;
+}
+.dark-light-switcher-inner .btn.btn-light {
+    background-color: #D0D0D0;
+}
+.dark-light-switcher-inner .btn:hover {
+    background-color: #fa163f !important;
+    color: #fff !important;
+}

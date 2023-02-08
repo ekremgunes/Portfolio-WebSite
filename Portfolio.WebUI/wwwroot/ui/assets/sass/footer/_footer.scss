@@ -1,0 +1,223 @@
+/*--------------------------------------------------------------
+# Footer-block
+--------------------------------------------------------------*/
+.site-footer {
+	background-color: #141414;
+	border-top: 0px solid;
+	position: relative;
+	margin-top: 130px;
+	padding-top: 20px;
+	@media (min-width: 992px) {
+		border-top: 14px solid $color__primary;
+		background-color: $black;
+		margin-top: 135px;
+	}
+	&:before {
+		position: absolute;
+		content: "";
+		left: 0;
+		top: -130px;
+		background-color: #141414;
+		-webkit-clip-path: polygon(0 100%, 35% 0, 100% 60px, 100% 100%);
+		        clip-path: polygon(0 100%, 35% 0, 100% 60px, 100% 100%);
+		height: 130px;
+		width: 100%;
+		@media (min-width: 992px) {
+			-webkit-clip-path: polygon(0 150px, 49% 0, 100% 90px, 100% 100%, 0 100%);
+			        clip-path: polygon(0 150px, 49% 0, 100% 90px, 100% 100%, 0 100%);
+			height: calc(100% + 150px);
+			width: 50%;
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+
+.contact-block {
+	padding-bottom: 80px;
+	@media (min-width: 1200px) {
+		padding-bottom: 105px;
+	}
+	.section-title {
+		@media (min-width: 1200px) {
+			margin-top: -25px;
+		}
+		@media (min-width: 1400px) {
+			margin-bottom: 60px;
+		}
+		.title-main {
+			-webkit-box-pack: start;
+			    -ms-flex-pack: start;
+			        justify-content: flex-start;
+			> span {
+				color: $white;
+				border-color: #A4A4A4;
+			}
+		}
+		.sub-title {
+			color: #c9c6c6;
+		}
+	}
+	.contact-form-area {
+		position: relative;
+		@media (min-width: 992px) {
+			padding-right: 20px;
+		}
+		@media (min-width: 1200px) {
+			padding-right: 50px;
+		}
+		@media (min-width: 1400px) {
+			padding-right: 90px;
+		}
+		::-webkit-input-placeholder {
+				color: $white;
+				opacity: 0.35;
+		}
+		:-moz-placeholder {
+				color: $white;
+				opacity: 0.35;
+		}
+		::-moz-placeholder {
+				color: $white;
+				opacity: 0.35;
+		}
+		:-ms-input-placeholder {
+				color: $white;
+		}
+		.form-control {
+			background-color: $black;
+			color: $white;
+			border: 0px solid;
+			@media (min-width: 1200px) {
+				height: 58px;
+			}
+		}
+		textarea.form-control {
+			min-height: 120px;
+			@media (min-width: 1200px) {
+				min-height: 150px;
+			}
+		}
+	}
+}
+.footer-content-wrapper {
+	padding-bottom: 75px;
+	@media (min-width: 992px) {
+		padding-left: 25px;
+		padding-top: 150px;
+	}
+	@media (min-width: 1200px) {
+		padding-bottom: 95px;
+		padding-left: 55px;
+	}
+	@media (min-width: 1400px) {
+		padding-top: 180px;
+		padding-bottom: 95px;
+		padding-left: 85px;
+	}
+	.footer-widget-area {
+		margin-bottom: 10px;
+		@media (min-width: 992px) {
+			margin-bottom: 0px;
+		}
+		@media (min-width: 1200px) {
+			margin-bottom: 22px;
+		}
+	}
+	.widget-title {
+		font-size: 20px;
+		font-weight: 800;
+		margin-bottom: 35px;
+		color: $white;
+		text-transform: capitalize;
+		margin-top: -3px;
+    @media (min-width: 1200px) {
+      font-size: 25px;
+      margin-bottom: 45px;
+    }
+		> span {
+			border-bottom: 1px solid $color__primary;
+			padding-bottom: 5px;
+			@media (min-width: 768px) {
+				padding-bottom: 8px;
+			}
+		}
+	}
+	.widget_links a {
+		color: $color__footer;
+		font-weight: 700;
+		padding-bottom: 4px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+		&:hover {
+			color: $color__primary;
+		}
+	}
+	.copyright-text {
+		margin-bottom: 0;
+		> p {
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			color: #888888;
+			letter-spacing: 0.1em;
+			font-size: 14px;
+			border-bottom: 1px solid #484848;
+		}
+		a {
+			display: inline-block;
+			padding: 0 5px;
+			color: inherit;
+			&:hover {
+				color: $color__primary;
+			}
+		}
+	}
+}
+
+.single-contact-info {
+	margin-bottom: 25px;
+	@media (min-width: 768px) {
+		text-align: right;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	.icon {
+		width: 55px;
+		height: 55px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		color: $color__primary;
+		background-color: #191818;
+		border-radius: 50%;
+		font-size: 14px;
+		margin-bottom: 8px;
+		@media (min-width: 768px) {
+			margin-left: auto;
+			font-size: 15px;
+		}
+		@media (min-width: 1200px) {
+			margin-left: auto;
+			font-size: 16px;
+		}
+	}
+	p {
+		color: $color__footer;
+		font-weight: 600;
+		a:hover {
+			color: $color__primary;
+		}
+	}
+}

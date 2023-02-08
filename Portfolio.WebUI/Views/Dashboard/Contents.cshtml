@@ -1,0 +1,125 @@
+﻿@model List<ContentListDto>
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Contents</span></li>
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Contents</h4>
+                <div class="data-tables datatable-primary">
+                    <table id="tabledataContent" class="text-center">
+                        <thead class="text-capitalize">
+                            <tr>
+                                <th style ="width:11rem">
+                                    Image</th>
+                                <th>Name</th>
+                                <th >Rank</th>
+                                <th >Showcase</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                @foreach (var content in Model)
+                                {
+                                    <tr>
+                                        
+                                        <td><img style="width:11rem" src="~/imgs/gallery/@content.imagePath" /></td>
+                                        <td>@content.contentName</td>
+                                        <td>@content.rank</td>
+                                        @if (content.InShowCase == true)
+                                        {
+                                            <td><span class ="badge p-2 btn-xl badge-success">IN</span></td>
+
+                                        }
+                                        else
+                                        {
+                                            <td><span class ="badge p-2 btn-xl badge-info">Out</span></td>
+                                        }
+
+                                        <td>
+                                            <a onclick="removeContent(@content.id,this)" href="javascript:void(0)">
+                                                <i class="ti-trash"></i>
+                                            </a>
+                                            <a href="/Dashboard/UpdateContent/@content.id">
+                                                <i class="ti-pencil-alt"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span style="display:none" class="infoAlert">You don't have a any Content !'</span>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section content_active{
+    class="active"
+}
+@section links{
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+
+}
+@section datatable_scripts{
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tabledataContent').DataTable();
+        });
+
+
+        //ONAY İSTEMEN LAZIM
+        function removeContent(id, element) {
+            console.log("HERE")
+            if (id <= 0 ) {
+                toastr.warning("Something went wrong")
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/DeleteContent',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        if (result == "success") {
+                            element.parentElement.parentElement.remove()
+                            toastr.success("Content Deleted")
+                        }
+                        else {
+                            toastr.error("Something went wrong ")
+
+                        }
+
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+        }
+    </script>
+}

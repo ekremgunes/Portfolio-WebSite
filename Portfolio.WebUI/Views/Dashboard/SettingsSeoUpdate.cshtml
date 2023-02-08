@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Seo</span></li>
+}
+@section home_active{
+    class="active"
+}
+<div class="col-12 mt-5 mb-2">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Site Seo</h4>
+            <textarea onchange="updateSeo(this)" id="seoİnput" type="text" placeholder='<meta name="description" content="Portfolio" />' style="min-height: 21rem;height:auto" class="form-control form-control-lg">@ViewBag.seo</textarea>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function updateSeo(input) {
+            if (input.value.length < 10) {
+                toastr.error("something went wrong")
+            } else {
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/SettingsSeoUpdate',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        seo: input.value
+                    },
+                    success: function (result) {
+                        if (result == "success") {
+                            toastr.success("Seo Updated")
+                        }
+                        else {
+                            toastr.error("Something went wrong ")
+                        }
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+
+            }
+        }
+    </script>
+
+}

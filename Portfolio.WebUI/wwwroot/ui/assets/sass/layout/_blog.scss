@@ -1,0 +1,231 @@
+.blog-latest-items {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.entry-category > a {
+	color: $color__meta;
+	font-weight: normal;
+	font-size: 14px;
+	text-transform: capitalize;
+	@media only screen and (max-width: 575px) {
+		font-size: 13px;
+	}
+	&:last-child:after {
+		content: ' ';
+		padding-right: 0px;
+	}
+	&:hover {
+		color: $color__primary;
+	}
+	&:after {
+		color: $color__meta;
+		content: ',';
+		padding-right: 5px;
+		@media only screen and (max-width: 575px) {
+			padding-right: 3px;
+		}
+	}
+}
+.entry-meta {
+	> div {
+		color: $color__meta;
+		font-weight: normal;
+		font-size: 13px;
+		text-transform: capitalize;
+		@media (min-width: 576px) {
+			font-size: 14px;
+		}
+	}
+}
+.post {
+	background-color: $white;
+	margin-bottom: 40px;
+	@media (min-width: 992px) {
+		margin-bottom: 60px;
+	}
+	@media (min-width: 1200px) {
+		margin-bottom: 80px;
+	}
+	&:last-child {
+		border-bottom: 0px solid;
+		padding-bottom: 0;
+	}
+	.post-thumb {
+		margin-bottom: 0;
+		&:hover {
+			> a > img {
+				opacity: 0.95;
+			}
+		}
+		> a {
+			display: block;
+			> img {
+				-webkit-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+		}
+	}
+	.entry-meta {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		padding: 0 20px 15px;
+		@media (min-width: 576px) {
+			padding-bottom: 25px;
+		}
+		@media (min-width: 768px) {
+			padding: 0 30px 35px;
+		}
+		@media (min-width: 992px) {
+			padding: 0 45px 40px;
+		}
+		@media (min-width: 1200px) {
+			padding: 0 70px 80px;
+		}
+	}
+	.post-body {
+		padding-left: 20px;
+		padding-right: 20px;
+		@media (min-width: 576px) {
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		@media (min-width: 768px) {
+			padding-left: 80px;
+			padding-right: 80px;
+		}
+		@media (min-width: 992px) {
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		@media (min-width: 1200px) {
+			padding-left: 140px;
+			padding-right: 140px;
+		}
+	}
+	.entry-title {
+		font-size: 22px;
+		margin-bottom: 18px;
+		line-height: 1.35em;
+		font-weight: 800;
+		@media (min-width: 768px) {
+			font-size: 26px;
+			margin-bottom: 20px;
+		}
+		@media (min-width: 992px) {
+			font-size: 28px;
+			margin-bottom: 25px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 32px;
+		}
+		a:hover,
+		a:focus {
+			color: $color__primary;
+		}
+	}
+	.read-more-wrapper {
+		margin-top: 15px;
+		@media (min-width: 768px) {
+			margin-top: 25px;
+		}
+		@media (min-width: 992px) {
+			margin-top: 30px;
+		}
+	}
+	.post-details {
+		padding-top: 20px;
+		padding-bottom: 50px;
+		@media (min-width: 768px) {
+			padding-top: 27px;
+			padding-bottom: 60px;
+		}
+		@media (min-width: 1200px) {
+			padding-bottom: 100px;
+		}
+	}
+	&.post-grid {
+		background-color: $white_smoke;
+		margin-bottom: 30px;
+		&:hover .post-thumb img {
+			-webkit-transform: scale(1.05);
+			        transform: scale(1.05);
+		}
+		.post-details {
+			padding: 20px;
+			@media (min-width: 1200px) {
+				padding: 20px 30px;
+			}
+			@media (min-width: 1400px) {
+				padding: 20px 40px 25px;
+			}
+		}
+		.post-thumb {
+			position: relative;
+			overflow: hidden;
+			&:before {
+				position: absolute;
+				content: "";
+				left: 0;
+				bottom: 0;
+				background-color: $white_smoke;
+				-webkit-clip-path: polygon(80% 100%, 100% 33%, 100% 100%, 0 100%, 0 0);
+				        clip-path: polygon(80% 100%, 100% 33%, 100% 100%, 0 100%, 0 0);
+				height: 52px;
+				width: 101%;
+				z-index: 1;
+				@media (min-width: 576px) {
+					height: 65px;
+				}
+				@media (min-width: 768px) {
+					height: 55px;
+				}
+				@media (min-width: 992px) {
+					height: 40px;
+				}
+				@media (min-width: 1200px) {
+					height: 75px;
+				}
+			}
+			img {
+				width: 100%;
+				-webkit-transition: ease-in-out 0.25s;
+				transition: ease-in-out 0.25s;
+			}
+		}
+		.entry-meta {
+			margin-bottom: 10px;
+			padding: 0;
+			display: block;
+			> div {
+				display: inline-block;
+				+ div:before {
+					content: "-";
+					padding: 0 2px;
+					@media (min-width: 576px) {
+						padding: 0 4px;
+					}
+				}
+			}
+		}
+		.entry-title {
+			font-size: 22px;
+			margin-bottom: 17px;
+			line-height: 1.35em;
+			@media (min-width: 992px) {
+				font-size: 20px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 25px;
+			}
+		}
+	}
+}

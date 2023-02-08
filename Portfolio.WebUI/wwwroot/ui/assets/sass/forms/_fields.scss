@@ -1,0 +1,191 @@
+/*-------------------------------------------------
+    [ ## Fields ]
+*/
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+    &:focus {
+        outline: none;
+    }
+}
+input[type=time]::-webkit-inner-spin-button, 
+input[type=time]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba($black, 0) inset;
+    -webkit-text-fill-color: $color_text_main !important;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px rgba($black, 0) inset;
+    -webkit-text-fill-color: $color_text_main !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    @include prefixed(transition,
+    background-color 5000s ease-in-out 0s);
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    display: block;
+    min-height: 165px;
+    @media only screen and (max-width: 420px){
+        min-height: 145px;
+    }
+}
+
+input,
+select,
+textarea {
+    border: none;
+    vertical-align: baseline;
+    font-size: 100%;
+    @include prefixed(transition,
+    all 0.25s ease);
+}
+label {
+    font-size: 16px;
+    color: $soft_nero;
+    margin-bottom: 10px;
+    display: block;
+}
+
+// Placeholder Color
+::-webkit-input-placeholder {
+    color: $color__heading;
+    opacity: 0.6;
+}
+:-moz-placeholder {
+    color: $color__heading;
+    opacity: 0.6;
+}
+
+::-moz-placeholder {
+    color: $color__heading;
+    opacity: 0.6;
+}
+
+:-ms-input-placeholder {
+    color: $color__heading;
+}
+.form-group {
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+        margin-bottom: 24px;
+    }
+    label {
+        color: $color__primary;
+        font-size: 16px;
+        font-family: $font_heading;
+        font-weight: 700;
+        margin-bottom: 14px;
+        cursor: pointer;
+        @media only screen and (max-width: 420px){
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+// Form controller
+.form-control {
+    background-color: transparent;
+    width: 100%;
+    height: 52px;
+    outline: none;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-color: $color__heading;
+    color: $color__heading;
+    border-radius: 0px;
+    &:focus {
+        color: $color__heading;
+        border-color: $black;
+        background-color: transparent;
+        box-shadow: 0 0 0 0 rgba(13,110,253,.25);
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 5px 15px;
+    }
+}
+textarea.form-control {
+    padding-top: 15px;
+}
+
+// custom Radio Btn
+input[type="radio"] {
+    display: none;
+    + label {
+        color: #1d2331;
+        position: relative;
+        padding-left: 23px;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        cursor: pointer;
+        &:before {
+            border: 3px solid #B9BEC0;
+            content: "";
+            height: 14px;
+            left: 1px;
+            position: absolute;
+            top: 3px;
+            -webkit-transition: all 0.15s ease-in 0s;
+            transition: all 0.15s ease-in 0s;
+            width: 14px;
+            background-color: $white;
+            border-radius: 50%;
+        }
+    }
+    &:checked + label:before {
+        border-color: #07C1FE;
+        background-color: $color__primary;
+    }
+}
+  
+  
+// Post password Form
+.post-password-form {
+    input[type="password"] {
+        font-size: 14px;
+        border: 1px solid #f0f0f0;
+        outline: none;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    input[type="submit"] {
+        padding: 15px 30px;
+        position: relative;
+        top: 0;
+        font-size: 14px;
+    }
+}

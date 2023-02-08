@@ -1,0 +1,125 @@
+/*
+Template Name: Intimate - One Page Personal & Agency Portfolio Template
+Template URI: https://themeforest.net/user/htmlguru
+Author: HTMLguru
+Author URI: https://themeforest.net/user/htmlguru/portfolio
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography 
+    [ ## Heading ] 
+    [ ## Others Typography ]
+# Elements
+    [ ## Font Size ]
+    [ ## Font Weight ]
+    [ ## Margin Element ]
+    [ ## Padding Element ]
+    [ ## Color Element ]
+    [ ## Background Element ]
+    [ ## Social Element ]
+    [ ## Preloader ]
+    [ ## Overlay Element ]
+    [ ## Lists ]
+    [ ## Post, Page, Comments Table ]
+    [ ## Others Element ]
+# Forms
+	[ ## Buttons ]
+	[ ## Fields ]
+# Modules 
+	[ ## Alignments ]
+	[ ## Clearings ]
+	[ ## Infinite Scroll ]
+# Header Content
+	[ ## Header ]
+    [ ## Sticky header ]
+# Navigation
+	[ ## Links ]
+	[ ## Menus ]
+	[ ## Pagination ]
+        [ ### Post Navigation ]
+	[ ## Navigation responsive ]
+# layout
+    [ ## Hero Block ]
+    [ ## Services ]
+    [ ## About ]
+    [ ## Team ]
+    [ ## Portfolio ]
+    [ ## Testimonial ]
+    [ ## Work Brand ]
+    [ ## Blog ]
+# Others
+	[ ## Single Posts ]
+# site content
+	[ ## 404 Page ]
+	[ ## Posts and pages ]
+	    [ ### Page Title ]
+	    [ ### Page info Content ]
+	[ ## Comments ]
+	[ ## Widgets ]
+	[ ## Widgets Content ]
+# Footer
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Header Content
+--------------------------------------------------------------*/
+@import "header/header";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Others
+--------------------------------------------------------------*/
+@import "others/others";
+
+/*--------------------------------------------------------------
+# Site Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Footer Content
+--------------------------------------------------------------*/
+@import "footer/footer";

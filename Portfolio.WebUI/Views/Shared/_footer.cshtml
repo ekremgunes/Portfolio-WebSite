@@ -1,0 +1,140 @@
+@model FooterViewModel;
+@{
+    var message = Model.MessageDto;
+    var settings = Model.SettingsDto;
+}
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Site Footer
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<footer style="bottom: 0 !important;" id="contact-block" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-block">
+                    <div class="section-title">
+                        <h2 class="title-main">
+                            04 <span>Contact</span>
+                        </h2><!-- /.title-main -->
+                        <p class="sub-title">Send a Message</p>
+                    </div><!-- /.section-title -->
+                    <div class="contact-form-area">
+
+                        <form name="contactForm" class="contact-form" action="javascript:void(0)" validate>
+                            
+
+                            <div class="row gx-4">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="@message.senderName" id="name" value="" class="form-control"
+                                               name="SenderName" type="text" placeholder="Ýsminiz*">
+                                    </div>
+                                </div>
+                                <!--./ col-lg-6-->
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="@message.senderMail" id="mail" value="" type="email" class="form-control"
+                                               name="SenderMail" placeholder="Mailiniz*">
+                                    </div>
+                                </div>
+                                <!--./ col-lg-6 -->
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea asp-for="@message.messageContent" name="MessageContent" class="form-control"
+                                                  rows="4" placeholder="Mesajýnýzý girin ..."></textarea>
+                                    </div>
+                                </div><!-- /.col-12 -->
+                                <input id="isUser" type="text" value="" name="isUser"/>
+                             
+                                <div class="col-12">
+                                    <button onclick="submitForm()" class="btn btn-primary">Send Message</button>
+                                </div>
+
+                                <!--./ col-lg-6 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.contact-form -->
+
+                    </div><!-- /.contact-form-area -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="padding-top:24px" class="footer-content-wrapper">
+                    <div class="footer-widget-area">
+                        <div class="row">
+                            <!--~~~~~ Start Widget Links ~~~~~-->
+                            <div class="col-lg-6 col-md-6">
+                                <aside class="widget widget_links">
+                                    <h2 class="widget-title"><span>Fast Links</span></h2>
+                                    <div class="widget-content">
+                                        <ul>
+                                            <li><a href="/Home/Index#portfolio-block">Portfolio</a></li>
+                                            <li><a href="/Home/Index#about-block">About us</a></li>
+                                            <li><a href="/Home/Index#service-block">Services</a></li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <!--~./ end links widget ~-->
+                            <!--~~~~~ Start Widget Links ~~~~~-->
+                            <div class="col-lg-6 col-md-6">
+                                <aside class="widget widget_contact">
+                                    <div id="social-medias" style="margin-bottom:20px" class="widget-content">
+                                        <div class="single-contact-info">
+                                            <a target="_blank" href="mailto:@settings.email">
+                                                <div class="icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </a>
+                                            <p><a target="_blank" href="mailto:@settings.email">@settings.email</a></p>
+                                        </div><!-- /.single-contact-info -->
+                                        @if (settings.instagramVisibility == true)
+                                        {
+                                                <div class="single-contact-info">
+                                                    <a target="_blank" href="@settings.instagramUrl">
+                                                        <div class="icon">
+                                                            <i class=" ti-instagram "></i>
+                                                        </div>
+                                                    </a>
+                                                    <p><a target="_blank" href="@settings.instagramUrl">instagram</a></p>
+                                                </div>
+                                        }
+                                        @if (settings.twitterVisibility == true)
+                                        {
+                                                <div class="single-contact-info">
+                                                    <a href="@settings.twitterUrl">
+                                                        <div class="icon">
+                                                            <i class=" ti-twitter "></i>
+                                                        </div>
+                                                    </a>
+                                                    <p><a target="_blank" href="@settings.twitterUrl">twitter</a></p>
+                                                </div>
+                                        }
+                                        @if (settings.facebookVisibility == true)
+                                        {
+                                                <div class="single-contact-info">
+                                                    <a target="_blank" href="@settings.facebookUrl">
+                                                        <div class="icon">
+                                                            <i class="fa-brands fa-instagram"></i>
+                                                        </div>
+                                                    </a>
+                                                    <p><a target="_blank" href="@settings.facebookUrl">facebook</a></p>
+                                                </div>
+                                        }
+                                    </div>
+                                </aside>
+                            </div>
+                            <!--~./ end links widget ~-->
+                        </div>
+                    </div>
+                    <!--~./ end footer widgets area ~-->
+                    <div class="copyright-text text-center">
+                        <p>Created by <a target="_blank" href="http://www.gunesekrem.com">Ekrem Güneþ</a> </p>
+                        <br>
+                        <p>Copyright LisanaMedya &copy; 2023</p>
+                    </div>
+                    <!--~./ end copyright text ~-->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

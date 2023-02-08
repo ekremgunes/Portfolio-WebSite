@@ -1,0 +1,126 @@
+﻿@model List<SkillListDto>
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Skills</span></li>
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Skills</h4>
+                <div class="data-tables datatable-primary">
+                    <table id="tabledataSkill" class="text-center">
+                        <thead class="text-capitalize">
+                            <tr >
+                                <th >Name</th>
+                                <th >Rank</th>
+                                <th >Percent</th>
+                                <th >Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count > 0)
+                            {
+                                @foreach (var skill in Model)
+                                {
+                                    <tr>
+                                        <td>@skill.skillName</td>
+                                        <td>@skill.rank</td>                                                                         
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: @(skill.skillPercent)%"></div>
+                                            </div>
+                                        </td>                                   
+                                        <td>
+                                            <a onclick="removeSkill(@skill.id,this)" href="javascript:void(0)">
+                                                <i class="ti-trash"></i>
+                                            </a>
+                                            <a href="/Dashboard/UpdateSkill/@skill.id" href="javascript:void(0)">
+                                                <i class="ti-pencil-alt"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <span style="display:none" class="infoAlert">You don't have a any Skill !'</span>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section links{    
+    <style>
+        .progress{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .progress-bar{
+            background-color: #1117eaba;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+
+}
+@section datatable_scripts{
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tabledataSkill').DataTable();
+        });
+        
+
+
+        function removeSkill(id, element) {
+            if (id <= 0 ) {
+                toastr.warning("Something went wrong")
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/DeleteSkill',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        if (result == "success"){
+                            element.parentElement.parentElement.remove()
+                            toastr.success("Skill Deleted")
+                        }
+                        else{
+                          toastr.error("Something went wrong ")
+                        }
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+        }
+    </script>
+}
+@section skills_active{
+    class="active"
+}

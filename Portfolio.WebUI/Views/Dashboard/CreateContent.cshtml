@@ -1,0 +1,150 @@
+﻿@model ContentCreateDto
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Create Content</span></li>
+}
+
+<div class="row">
+    <div class="col-12 mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-1">Create Content</h4>
+                <br>
+                <form  asp-action="CreateContent" asp-controller="Dashboard" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="@Model.imagePath" value="empty"/>
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.contentName"></label>
+                        <input asp-for="@Model.contentName" class="form-control" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.contentName"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.rank"></label>
+                        <input asp-for="@Model.rank" class="form-control" type="number" value="99" max="101" min="0">
+                        <span class="text-danger" asp-validation-for="@Model.rank"></span>
+                    </div>
+
+                    
+                    <label class="ml-1" for="Img">Content Image</label>
+                    <div class="input-group mb-5">
+
+                        <label class="img-label" for="Img">
+                            <div class="overlay">
+                            </div>
+                        </label>
+
+                        <input id="Img" type='file' accept='image/*' name="Img"
+                               onchange='openFile(event)'>
+
+                        <div class="output-div" id="output-div">
+                            <div id="output-img-div">
+                                <img class="output-img" src="~/imgs/gallery/gallery.jpg" alt="not found">
+                            </div>
+                            <img class="output" id='output'>
+                        </div>
+                        <span class="text-danger" asp-validation-for="@Model.imagePath"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.InShowCase"></label><br>
+                        <label class="switch ml-2">
+                            <input asp-for="@Model.InShowCase" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="text-danger" asp-validation-for="@Model.InShowCase"></span>
+                    </div>
+
+                    <div><button type="submit" class="btn btn-primary">submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+@section content_active{
+    class="active"
+}
+@section scripts{
+    <script>
+        var openFile = function (event) {
+
+            var input = event.target
+            var path =input.files[0].name
+            var extn = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+            if (extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
+                var reader = new FileReader()
+
+                reader.onload = function () {
+
+                    var dataURL = reader.result
+                    var output = document.getElementById('output')
+                    output.src = dataURL
+                    var outputDiv = document.getElementById("output-div")
+                    var outputImgDiv = document.getElementById("output-img-div")
+
+                    outputImgDiv.style.display = "none"
+                    output.style.display = "inline"
+
+                }
+                reader.readAsDataURL(input.files[0])
+            } else {
+                toastr.info("file must  be Image")
+            }
+        }
+    </script>
+}
+@section links{
+    <style>
+
+        /*for images*/
+        input[type="file"] {
+            position: absolute;
+            left: -9999rem
+        }
+
+        .overlay {
+            opacity: 0;
+            background: gray;
+            position: absolute;
+            width: 23rem;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .img-label {
+            border: 2px solid var(--first);
+            display: inline-block;
+            position: absolute;
+            width: 23rem;
+            height: 14rem !important;
+            border-radius: .7rem;
+            cursor: pointer;
+        }
+
+            .img-label:hover #overlay {
+                opacity: 0.8;
+            }
+
+        .output {
+            display: none;
+            z-index: 5;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: 1rem;
+        }
+
+        .output-img {
+            background-position: center;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .output-div {
+            margin-bottom: .7rem;
+        }
+    </style>
+}

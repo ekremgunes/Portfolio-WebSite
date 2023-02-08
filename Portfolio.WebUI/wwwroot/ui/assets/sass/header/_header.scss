@@ -1,0 +1,84 @@
+.site-header {
+	padding: 0px;
+	background-color: $white;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	.navigation-area {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		min-height: 70px;
+		.site-branding a {
+			display: inline-block;
+		}
+		> .site-navigation {
+			display: none;
+			@media only screen and (min-width: 1200px) {
+				display: block;
+			}
+		}
+	}
+	.mobile-sidebar-menu {
+		display: block;
+		@media only screen and (min-width: 1200px) {
+			display: none;
+		}
+	}
+	&.default-header-style{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 99;
+		background-color: transparent;
+		@media (min-width: 576px) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		@media (min-width: 1200px) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+	&.header-style-one {
+		background-color: #141414;
+		padding: 10px 0;
+		@media only screen and (min-width: 1200px) {
+			padding: 15px 0;
+		}
+	}
+}
+
+/*-------------------------------------------------
+	[ ## Sticky header ]
+*/
+.site-header.sticky {
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	background-color: $white;
+	box-shadow: 0px 5px 10px -5px rgba($black, 0.15);
+	padding: 10px 0;
+	display: none;
+	@media only screen and (min-width: 1200px) {
+		padding: 15px 0;
+		display: block;
+	}
+	.navigation .mainmenu > li > a {
+		color: $color__heading;
+		&:hover,
+		&.active {
+			color: $color__primary;
+		}
+	}
+}

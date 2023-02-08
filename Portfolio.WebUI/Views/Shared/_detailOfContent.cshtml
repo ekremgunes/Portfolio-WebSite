@@ -1,0 +1,21 @@
+@model ContentDetailListDto;
+<h1 class="text-uppercase"><strong>@Model.contentDetailName</strong></h1>
+<div class="col-12 pd-y-40">
+    <img oncontextmenu="return false;" width="900px" src="~/imgs/gallery/@Model.imagePath">
+</div>
+<br>
+<div oncontextmenu="return false;" style="max-width: 900px; margin:auto" class=" pd-b-30 ">
+    <div class="row">  
+
+        @if (Model.images.Count > 0)
+        {
+            @foreach (var item in Model.images)
+            {
+                <div class="col-12 col-lg-6 col-xl-6 col-md-6 pd-b-20">
+                    <img   src="~/imgs/gallery/@item.imgPath">
+                </div>
+
+            }
+        }
+</div>
+</div>

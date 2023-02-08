@@ -1,0 +1,51 @@
+/*-------------------------------------------------
+    [ ### Work Brand ]
+*/
+.work-brand-block {
+	background-color: $white_smoke;
+	padding: 30px 0;
+	@media (min-width: 768px) {
+		padding: 50px 0;
+	}
+	@media (min-width: 1200px) {
+		padding: 70px 0;
+	}
+	@media (min-width: 1400px) {
+		padding: 85px 0;
+	}
+	.brands-link {
+		min-height: 150px;
+		cursor: pointer;
+		overflow: hidden;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center; 
+		align-items: center;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		padding: 0 20px;
+		img {
+			-webkit-transition: all 0.3s;
+			transition: all 0.3s;
+			-webkit-transform: scale(0.8);
+			        transform: scale(0.8);
+			@media (min-width: 1200px) {
+				-webkit-transform: scale(1);
+				        transform: scale(1);
+			}
+		}
+		&:hover > img {
+			-webkit-transform: scale(0.9);
+			        transform: scale(0.9);
+			@media (min-width: 1200px) {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+			}
+		}
+	}
+}

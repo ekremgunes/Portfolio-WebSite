@@ -1,0 +1,16 @@
+﻿@model List<ContentListDto>
+
+@if (Model.Count > 0)
+{
+    @foreach (var content in Model)
+    {
+        <option value="@content.id">@content.contentName</option>
+
+    }
+}
+else
+{
+    <span style="display:none" class="warningAlert">You need a content</span>
+}
+
+

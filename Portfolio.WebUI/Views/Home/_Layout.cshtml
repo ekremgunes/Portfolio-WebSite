@@ -1,0 +1,337 @@
+﻿@{
+    ViewData["Title"] = "Lisana";
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Specific Meta
+    ================================================== -->
+    @await RenderSectionAsync("Seo",false)
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Titles
+    ================================================== -->
+    <title>@ViewData[ "Title"] </title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" type="image/png" href="~/ui/imgs/shortcut.png">
+    <link rel="apple-touch-icon" href="~/shortcut.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/ui/imgs/shortcut.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/ui/imgs/shortcut.png">
+
+    <!-- Custom Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/dashboard/css/themify-icons.css">
+
+    <link rel="stylesheet" href="~/ui/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/ui/assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/ui/assets/css/simple-scrollbar.css" />
+    <link rel="stylesheet" href="~/ui/assets/css/odometer-theme-default.css">
+    <link rel="stylesheet" href="~/ui/assets/css/fontawesome.all.min.css" />
+    <link rel="stylesheet" href="~/ui/assets/css/style.css" />
+
+    <link rel="stylesheet" href="~/dashboard/libraries/toastr/toastr.min.css">
+
+    <script src="~/ui/assets/js/modernizr.min.js"></script>
+    <style>
+        .toast {
+            opacity: 1 !important;
+        }
+    </style>
+    @RenderSection("links",required:false)
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navigation-area">
+
+    <header style="padding: 0.4rem;" id="navbar_contents" class="site-header default-header-style ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="navigation-area">
+                        <!-- Site Branding -->
+                        <div class="site-branding">
+                            <a href="/Home/Index">
+                                @await RenderSectionAsync("logo_Area")
+                            </a>
+                        </div>
+                        <!-- Site Navigation -->
+                        <div class="site-navigation">
+                            <nav class="navigation">
+                                <!-- Main Menu -->
+                                <div class="menu-wrapper">
+                                    <div class="menu-content">
+                                        <ul class="mainmenu">
+                                            <li>
+                                                <a class="nav-link" href="/Home/Index#hero-block">Home</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="/Home/Index#service-block">Services</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="/Home/Index#about-block">About</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="/Home/Index#portfolio-block">Portfolyo</a>
+                                            </li>
+
+                                            <li>
+                                                <a class="nav-link" href="#contact-block">Contact</a>
+                                            </li>
+                                        </ul> <!-- /.menu-list -->
+                                    </div> <!-- /.hours-content-->
+                                </div><!-- /.menu-wrapper -->
+                            </nav>
+                        </div><!-- /.site-navigation -->
+                        <div class="hamburger-menus">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- /.hamburger-menus -->
+                    </div><!-- /.navigation-area -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+        <div class="mobile-sidebar-menu sidebar-menu">
+            <div class="overlaybg"></div>
+        </div>
+    </header>
+    <!--~~./ end site header ~~-->
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+        @RenderSection("Header", required: false)
+
+        @RenderBody()
+
+
+        @RenderSection("footer",required:true)
+
+    </div>
+
+    @*alert*@
+    <div style="display:none">
+        @Html.Raw(TempData["alerts"])
+    </div>
+    <!--~~./ end site content ~~-->
+    <!-- All The JS Files ================================================== -->
+    <script>
+        const Infoalerts = document.querySelectorAll(".infoAlert")
+        Infoalerts.forEach((alert) => {
+            toastr.info(alert.textContent)
+        })
+        const Successalerts = document.querySelectorAll(".successAlert")
+        Successalerts.forEach((alert) => {
+            toastr.success(alert.textContent)
+        })
+        const Warningsalerts = document.querySelectorAll(".warningAlert")
+        Warningsalerts.forEach((alert) => {
+            toastr.warning(alert.textContent)
+        })
+        const Erroralerts = document.querySelectorAll(".errorAlert")
+        Erroralerts.forEach((alert) => {
+            toastr.error(alert.textContent)
+        })
+
+    </script>
+    <script>
+        "use strict";
+        var formGiris = document.forms["contactForm"]  // form selection
+        formGiris.isUser.style.visibility = "hidden"  //for bots    
+
+        function submitForm() {
+            var name = formGiris.SenderName
+            var mail = formGiris.SenderMail
+            var message = formGiris.MessageContent
+            var isUser = formGiris.isUser
+            if (isUser.value.length > 0) // manually bot enter this are and we can fetch it
+                return;
+
+            if (name.value != "" && name.value.length > 3 && mail.value != "" && message.value != "" && message.value.length > 15) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/SendMessage',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        senderName: name.value,
+                        senderMail: mail.value,
+                        Content: message.value
+                    },
+                    success: function (result) {
+                        if (result == "success") {
+                            toastr.success(name.value + ", message sended !")
+                            name.value = ""
+                            mail.value = ""
+                            message.value = ""
+                        }
+                        else {
+                            toastr.error("Something went wrong ")
+                        }
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+            else {
+                toastr.warning("I can see you didn't enter these")
+            }
+        }
+    </script>
+
+    <script src="~/ui/assets/js/popper.min.js"></script>
+    <script src="~/ui/assets/js/bootstrap.min.js"></script>
+    <script src="~/ui/assets/js/jquery.js"></script>
+    <script src="~/ui/assets/js/plugins.js"></script>
+    <script src="~/ui/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/ui/assets/js/simple-scrollbar.min.js"></script>
+    <script src="~/ui/assets/js/background-parallax.js"></script>
+    <script src="~/ui/assets/js/theia-sticky-sidebar.min.js"></script>
+    <script src="~/ui/assets/js/ResizeSensor.min.js"></script>
+    <script src="~/ui/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/ui/assets/js/packery-mode.pkgd.min.js"></script>
+    <script src="~/ui/assets/js/scrolla.jquery.min.js"></script>
+    <script src="~/ui/assets/js/odometer.min.js"></script>
+    <script src="~/ui/assets/js/isInViewport.jquery.js"></script>
+    <script src="~/ui/assets/js/main.js"></script>
+    <script src="~/dashboard/libraries/toastr/toastr.min.js"></script>
+
+    @RenderSection("Scripts",required:false)
+
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 50,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#888"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#888"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 3,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#888",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true,
+            "config_demo": {
+                "hide_card": false,
+                "background_color": "#b61924",
+                "background_image": "",
+                "background_position": "50% 50%",
+                "background_repeat": "no-repeat",
+                "background_size": "cover"
+            }
+        }
+        );
+    </script>
+</body>
+
+</html>

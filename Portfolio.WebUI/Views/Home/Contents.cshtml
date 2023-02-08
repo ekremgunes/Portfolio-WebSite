@@ -1,0 +1,77 @@
+@model ContentsViewModel;
+@{
+    Layout = "_Layout";
+    var dtos = Model.dtos;
+    var footerModel = Model.footerViewModel;
+}
+@section logo_Area{
+    <img oncontextmenu="return false;" width="235px" src="~/imgs/gallery/@footerModel.SettingsDto.logoImgPath" alt="Site Logo" />
+}
+@if (dtos.Count == 0)
+{
+    <div class="pd-t-220">
+        <div style="min-height:17rem">
+            <br>
+            <h2 style="text-align: center;">We are working for new Projects ..</h2>
+            <br>
+        </div>
+        <br>
+    </div>
+}
+else
+{
+    <div id="portfolio-block" class="portfolio-block pd-b-100 pd-t-105">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h2 class="title-main">
+                            All<span>Contents</span>
+                        </h2><!-- /.title-main -->
+                        <p class="sub-title">@footerModel.SettingsDto.slogan</p>
+                    </div><!-- /.section-title -->
+                </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <div class="container custom-container-1200">
+
+            <div oncontextmenu="return false;" class="row portfolio-grid gutters-40" style="position: relative; height: auto;">
+                @if (dtos != null)
+                {
+                    @foreach (var content in dtos)
+                    {
+                        <div class="item col-lg-6 col-xl-4 col-md-6 col-sm-11" style="margin:0">
+                            <a class="portfolio-item" href="/Home/ContentDetail?id=@content.id">
+                                <figure class="portfolio-thumb">
+                                    <img src="~/imgs/gallery/@content.imagePath" alt="portfolio Item">
+                                </figure><!-- /.portfolio-thumb -->
+                                <div class="overlay-wrapper">
+                                    <div class="overlay"></div><!-- /.overlay -->
+                                    <div class="portfolio-info">
+                                        <h3 class="heading">@content.contentName</h3>
+                                    </div><!-- /.portfolio-info -->
+                                </div><!-- /.overlay-wrapper -->
+                            </a><!-- /.portfolio-item -->
+                        </div>
+
+                        <!-- /.col-xl-3 -->
+                    }
+                }
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+
+
+}
+@section links{
+    <style>
+        .mainmenu li a{
+            color:black !important;
+        }
+    </style>
+}
+@section footer{
+
+    @await Html.PartialAsync("_footer",footerModel)
+}

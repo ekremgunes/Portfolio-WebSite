@@ -1,0 +1,148 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\UI\**" />
+    <Content Remove="Views\UI\**" />
+    <EmbeddedResource Remove="Views\UI\**" />
+    <None Remove="Views\UI\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shared\_PanelLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\Lenovo\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Business\Portfolio.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ErrorLogs\" />
+    <Folder Include="wwwroot\imgs\gallery\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\dashboard\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\dashboard\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\dashboard\fonts\themify.svg" />
+    <None Include="wwwroot\dashboard\images\icon\Thumbs.db" />
+    <None Include="wwwroot\dashboard\js\ekstra.js" />
+    <None Include="wwwroot\dashboard\js\metisMenu.min.js" />
+    <None Include="wwwroot\dashboard\js\plugins.js" />
+    <None Include="wwwroot\dashboard\js\scripts.js" />
+    <None Include="wwwroot\dashboard\js\vendor\modernizr-2.8.3.min.js" />
+    <None Include="wwwroot\dashboard\libraries\bootsrap\bootstrap.min.js" />
+    <None Include="wwwroot\dashboard\libraries\bootsrap\popper.min.js" />
+    <None Include="wwwroot\dashboard\libraries\carousel\owl.carousel.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\dashboard\libraries\jquery\jquery-2.2.4.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery\jquery.slicknav.min.js" />
+    <None Include="wwwroot\dashboard\libraries\jquery\jquery.slimscroll.min.js" />
+    <None Include="wwwroot\dashboard\libraries\toastr\toastr.js.map" />
+    <None Include="wwwroot\dashboard\libraries\toastr\toastr.min.js" />
+    <None Include="wwwroot\ErrorLogs\Error_Log.text" />
+    <None Include="wwwroot\ui\assets\js\background-parallax.js" />
+    <None Include="wwwroot\ui\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\ui\assets\js\contact.js" />
+    <None Include="wwwroot\ui\assets\js\heandline.js" />
+    <None Include="wwwroot\ui\assets\js\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\ui\assets\js\isInViewport.jquery.js" />
+    <None Include="wwwroot\ui\assets\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\ui\assets\js\jquery.js" />
+    <None Include="wwwroot\ui\assets\js\jquery.zoomslider.min.js" />
+    <None Include="wwwroot\ui\assets\js\main.js" />
+    <None Include="wwwroot\ui\assets\js\modernizr.min.js" />
+    <None Include="wwwroot\ui\assets\js\odometer.min.js" />
+    <None Include="wwwroot\ui\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\ui\assets\js\packery-mode.pkgd.min.js" />
+    <None Include="wwwroot\ui\assets\js\particle-animation.js" />
+    <None Include="wwwroot\ui\assets\js\plugins.js" />
+    <None Include="wwwroot\ui\assets\js\popper.min.js" />
+    <None Include="wwwroot\ui\assets\js\ResizeSensor.min.js" />
+    <None Include="wwwroot\ui\assets\js\scrolla.jquery.min.js" />
+    <None Include="wwwroot\ui\assets\js\simple-scrollbar.min.js" />
+    <None Include="wwwroot\ui\assets\js\theia-sticky-sidebar.min.js" />
+    <None Include="wwwroot\ui\assets\js\ultimate-bg.js" />
+    <None Include="wwwroot\ui\assets\sass\elements\_animation_element.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_colors_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_element_components.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_font_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_lists.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_margin_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_overlay_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_padding_elements.scss" />
+    <None Include="wwwroot\ui\assets\sass\elements\_tables.scss" />
+    <None Include="wwwroot\ui\assets\sass\footer\_footer.scss" />
+    <None Include="wwwroot\ui\assets\sass\forms\_buttons.scss" />
+    <None Include="wwwroot\ui\assets\sass\forms\_fields.scss" />
+    <None Include="wwwroot\ui\assets\sass\forms\_forms.scss" />
+    <None Include="wwwroot\ui\assets\sass\header\_header.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_about.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_blog.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_brands.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_introduction.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_layout.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_portfolio.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_services.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_team.scss" />
+    <None Include="wwwroot\ui\assets\sass\layout\_testimonial.scss" />
+    <None Include="wwwroot\ui\assets\sass\mixins\_mixins-master.scss" />
+    <None Include="wwwroot\ui\assets\sass\modules\_alignments.scss" />
+    <None Include="wwwroot\ui\assets\sass\modules\_clearings.scss" />
+    <None Include="wwwroot\ui\assets\sass\modules\_infinite-scroll.scss" />
+    <None Include="wwwroot\ui\assets\sass\navigation\_links.scss" />
+    <None Include="wwwroot\ui\assets\sass\navigation\_menus.scss" />
+    <None Include="wwwroot\ui\assets\sass\navigation\_navigation.scss" />
+    <None Include="wwwroot\ui\assets\sass\navigation\_navigation_responsive.scss" />
+    <None Include="wwwroot\ui\assets\sass\navigation\_pagination.scss" />
+    <None Include="wwwroot\ui\assets\sass\others\_blog_single.scss" />
+    <None Include="wwwroot\ui\assets\sass\others\_others.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\others\_404.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\primary\_comments.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\primary\_posts-and-pages.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\secondary\_widgets.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\secondary\_widgets_content.scss" />
+    <None Include="wwwroot\ui\assets\sass\site\_site.scss" />
+    <None Include="wwwroot\ui\assets\sass\style.scss" />
+    <None Include="wwwroot\ui\assets\sass\typography\_copy.scss" />
+    <None Include="wwwroot\ui\assets\sass\typography\_headings.scss" />
+    <None Include="wwwroot\ui\assets\sass\typography\_typography.scss" />
+    <None Include="wwwroot\ui\assets\sass\variables-site\_colors.scss" />
+    <None Include="wwwroot\ui\assets\sass\variables-site\_option.scss" />
+    <None Include="wwwroot\ui\assets\sass\variables-site\_structure.scss" />
+    <None Include="wwwroot\ui\assets\sass\variables-site\_typography.scss" />
+    <None Include="wwwroot\ui\assets\sass\variables-site\_variables-site.scss" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\ui\assets\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\ui\assets\webfonts\icomoon.svg" />
+  </ItemGroup>
+
+</Project>

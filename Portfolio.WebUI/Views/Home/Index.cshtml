@@ -1,0 +1,238 @@
+﻿@model HomeViewModel;
+@{
+    ViewData["Title"] = "Portfolio";
+    Layout = "_Layout";
+    var contents = Model.Contents;
+    var message = Model.MessageDto;
+    var settings = Model.SettingsDto;
+    var skills = Model.Skills;
+    var services = Model.Services;
+    var footerModel = new FooterViewModel()
+            {
+                MessageDto = message,
+                SettingsDto = settings
+            };
+}
+@section logo_Area{
+    <img oncontextmenu="return false;" width="235px" src="~/imgs/gallery/@settings.logoImgPath" alt="Site Logo" />
+}
+@section Seo{
+    @Html.Raw(settings.seo)
+}
+@section Header{
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Hero Block
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div oncontextmenu="return false;" id="hero-block" class="hero-block bg-image bg-overlay bg-parallax particles-version"
+     style="background-image: url('/imgs/gallery/@settings.sliderImgPath');">
+        <div id="particles-js"></div>
+        <div class="waves-effect bottom" style="background-image: url('/ui/imgs/shape.png');">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content-area">
+                        <h2 class="hero-title">
+                            @settings.sliderHeader
+                        </h2><!-- /.hero-title -->
+                        <ul class="hero-services">
+                            <li>@settings.sliderServices</li>
+                        </ul>
+                        <a href="/Home/Index#portfolio-block" class="btn btn-primary">Çalışmalarımız</a>
+                    </div><!-- /.hero-content-area -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.hero-block -->
+}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Services Block
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="service-block" class="services-block pd-t-35">
+    <div class="container container-1200">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="title-main">
+                        01 <span>Services</span>
+                    </h2><!-- /.title-main -->
+                    <p class="sub-title">@settings.slogan</p>
+                </div><!-- /.section-title -->
+            </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+
+        <div class="row services-items-list gutters-30">
+            @if (services != null)
+            {
+                @foreach (var service in services)
+                {
+                    @if (service.isActive == false)
+                    {
+                        continue;
+                    }
+                    <div class="col-lg-4 col-md-6">
+                        <a class="service-item" href="#">
+                            <div class="service-icon">
+                                <img src="~/imgs/ServiceIcons/@service.iconPath" alt="Icon" />
+                            </div>
+                            <h3 class="title">@service.serviceName</h3>
+                        </a>
+                    </div>
+                }
+            }
+
+
+            <!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+<!--~~./ end services block ~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start About Us Block
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="about-block" class="about-us-block about-style-two pd-t-140">
+    <div class="container container-1200 ">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 ">
+                <div class="section-title text-center">
+                    <h2 class="title-main">
+                        02 <span>About Us</span>
+                    </h2><!-- /.title-main -->
+                    <p class="sub-title">@settings.slogan</p>
+                </div><!-- /.section-title -->
+            </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+    <div class="about-block-content">
+
+        <div class="container container-1200">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+
+                <div class="col-md-10 pd-t-40 col-lg-6">
+                    <img oncontextmenu="return false;" style="height: 500px; width:600px;" src="~/imgs/gallery/@settings.aboutImgPath" alt="">
+                </div>
+
+
+                <div class="col-md-10 col-lg-6">
+                    <div class="about-content">
+                        <h3 class="heading">@settings.aboutHeader</h3>
+                        <p>
+                            @settings.aboutContent
+                        </p>
+                        @if (skills != null)
+                        {
+                            <div class="skill-list">
+                                @foreach (var skill in skills)
+                                {
+                                    <div class="single-skill">
+                                        <h3 class="skill-title">@skill.skillName</h3>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: @skill.skillPercent%">
+                                                <span>@(skill.skillPercent)%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        }
+
+                    </div><!-- /.about-content -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+        </div><!-- /.container -->
+    </div>
+</div>
+<!--~~./ end about us block ~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Portfolio Block
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="portfolio-block" class="portfolio-block pd-b-100 pd-t-170">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="title-main">
+                        03 <span>Portfolio</span>
+                    </h2><!-- /.title-main -->
+                    <p class="sub-title">@settings.slogan</p>
+                </div><!-- /.section-title -->
+            </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+
+    <div class="container custom-container-1200">
+        <div class="row">
+            <div class="col-12 text-center">
+                <ul class="portfolio-filter">
+                    <li>
+                        <a href="#" data-filter="*" class="filter active">Showcase</a>
+                    </li>
+                    @if (contents != null)
+                    {
+                        <li>
+                            <a href="/Home/Contents" onclick="window.location.replace('/Home/Contents')" class="filter">ALL</a>
+                        </li>
+                    }
+
+
+                </ul>
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+
+        <div oncontextmenu="return false;" class="row portfolio-grid gutters-40" style="position: relative; height: auto;">
+            @if (contents != null)
+            {
+                @foreach (var content in contents)
+                {
+                    <div class="item col-lg-6 col-xl-4 col-md-6 col-sm-11" style="margin:0">
+                        <a class="portfolio-item" href="/Home/ContentDetail?id=@content.id">
+                            <figure class="portfolio-thumb">
+                                <img src="~/imgs/gallery/@content.imagePath" alt="portfolio Item">
+                            </figure><!-- /.portfolio-thumb -->
+                            <div class="overlay-wrapper">
+                                <div class="overlay"></div><!-- /.overlay -->
+                                <div class="portfolio-info">
+                                    <h3 class="heading">@content.contentName</h3>
+                                </div><!-- /.portfolio-info -->
+                            </div><!-- /.overlay-wrapper -->
+                        </a><!-- /.portfolio-item -->
+                    </div>
+
+                    <!-- /.col-xl-3 -->
+                }
+            }
+            else
+            {
+                <h5 class="text-center font-italic">We are working for new Projects..</h5>
+            }
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+@section footer{
+
+    @await Html.PartialAsync("_footer",footerModel)
+}
+<!--~./ end site footer ~-->
+@section Scripts{
+    <script src="~/ui/assets/js/particle-animation.js"></script>
+
+    <script>
+        $.ajax({
+            type: 'POST',
+            url: '/Home/addVisitor'
+        })
+    </script>
+    <script>
+        const socialMedias = document.getElementById("social-medias")
+        socialMedias.addEventListener("click", () => {
+            $.ajax({
+                type: 'POST',
+                url: '/Home/addVisitorInteraction'
+            })
+        })
+
+    </script>
+}

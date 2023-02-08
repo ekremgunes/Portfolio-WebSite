@@ -1,0 +1,82 @@
+/*-------------------------------------------------
+    [ ## Testimonial ]
+*/
+.testimonial-item {
+	text-align: center;
+	padding: 0 20px;
+	@media (min-width: 576px) {
+		padding: 0 40px;
+	}
+	@media (min-width: 768px) {
+		padding: 0 100px;
+	}
+	@media (min-width: 992px) {
+		padding: 0 130px;
+	}
+	@media (min-width: 1200px) {
+		padding: 0 200px;
+	}
+	@media (min-width: 1400px) {
+		padding: 0 185px;
+	}
+	.client-thumb {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 10px;
+		@media (min-width: 768px) {
+			width: 95px;
+			height: 95px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			-o-object-fit: cover;
+			   object-fit: cover;
+		}
+	}
+	.client-info {
+		.client-name {
+			font-size: 18px;
+			font-weight: 800;
+			margin-bottom: 4px;
+			line-height: 1.25em;
+			@media (min-width: 576px) {}
+			@media (min-width: 768px) {
+				font-size: 22px;
+			}
+			@media (min-width: 992px) {
+				font-size: 28px;
+			}
+			@media (min-width: 1400px) {
+				font-size: 32px;
+			}
+		}
+		.client-designation {
+			font-size: 13px;
+			line-height: 1.4em;
+			color: #6a6a6a;
+			@media (min-width: 768px) {
+				font-size: 14px;
+			}
+			@media (min-width: 992px) {
+				font-size: 15px;
+			}
+		}
+	}
+	.details {
+		font-size: 15px;
+		padding-top: 17px;
+		@media (min-width: 768px) {
+			font-size: 17px;
+		}
+		@media (min-width: 992px) {
+			font-size: 18px;
+			padding-top: 20px;
+		}
+		@media (min-width: 1400px) {
+			font-size: 20px;
+			padding-top: 25px;
+		}
+	}
+}

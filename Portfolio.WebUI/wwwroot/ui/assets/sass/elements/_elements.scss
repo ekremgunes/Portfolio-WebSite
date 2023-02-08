@@ -1,0 +1,151 @@
+@import "font_elements";
+
+@import "margin_elements";
+
+@import "padding_elements";
+
+@import "colors_elements";
+
+@import "overlay_elements";
+
+@import "lists";
+
+@import "tables";
+
+@import "element_components";
+
+@import "animation_element";
+
+/*-------------------------------------------------
+    [ ## Others Element ]
+*/
+.block-img {
+	display: block;
+}
+.mfp-close {
+	color: $white !important;
+}
+.full-content {
+	float: none;
+	margin: auto;
+}
+.full-width {
+	width: 100%;
+}
+.bg-cover {
+	background-size: cover;
+	background-position: center center;
+}
+[data-bg-image] {
+    background-size: cover;
+    background-position: 50%;
+}
+.no-border {
+	border: 0 none !important;
+}
+.overflow-hide {
+	overflow: hidden;
+}
+.overflow-visible {
+	overflow: visible;
+}
+.fl-none {
+	float: none !important;
+}
+.mb-fl-none {
+	@media only screen and (max-width: 800px) {
+		float: none !important;
+	}
+}
+.mb-text-center {
+	@media only screen and (max-width: 767px) {
+		text-align: center !important;
+	}
+}
+.owl-carousel .owl-item img {
+    width: auto;
+} 
+@media only screen and (min-width: 1400px) {
+	.container {
+	  max-width: 1270px; 
+	}
+}  
+@media only screen and (min-width: 1400px) {
+	.container-1200 {
+	  max-width: 1170px; 
+	}
+}  
+@media only screen and (max-width: 767px) {
+	.container {
+	  max-width: 520px; 
+	}
+}
+@media only screen and (max-width: 575px) {
+	.container {
+	  max-width: 450px; 
+	}
+} 
+ 
+@media only screen and (min-width: 1670px) {
+	.custom-container-1650 {
+		max-width: 1650px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+.container, 
+.container-fluid, 
+.container-lg, 
+.container-md, 
+.container-sm, 
+.container-xl, 
+.container-xxl {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.gutters-30 {
+	margin-left: -15px;
+	margin-right: -15px;
+	> * {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.border-bottom {
+	border-bottom: 1px solid $medium_purple;
+}
+.md-wrap-reverse {
+	@media only screen and (max-width: 992px) {
+		flex-wrap: wrap-reverse !important;
+	}
+}
+.sm-wrap-reverse {
+	@media only screen and (max-width: 767px) {
+		flex-wrap: wrap-reverse !important;
+	}
+}
+.logo-text {
+	font-size: 22px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #b2a1d2 !important;
+	letter-spacing: 0.45em;
+    display: inline-block;
+    > a:focus,
+    > a:hover,
+    &:focus,
+    &:hover {
+        color: #b2a1d2 !important;
+    }
+}
+
+.text-gradient {
+	color: $color__primary !important;
+	background: linear-gradient(145deg, $color__primary, $color__secondary);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+}

@@ -1,0 +1,225 @@
+﻿@model ContentDetailUpdateDto
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Update Content Detail</span></li>
+}
+
+<div class="row">
+    <div class="col-12 mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-1">Update Content Detail</h4>
+                <br>
+                <form asp-action="UpdateContentDetail" asp-controller="Dashboard" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="@Model.imagePath" value="@Model.imagePath" />
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.contentDetailName"></label>
+                        <input asp-for="@Model.contentDetailName" class="form-control" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.contentDetailName"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.rank"></label>
+                        <input asp-for="@Model.rank" class="form-control" type="number" max="101" min="0">
+                        <span class="text-danger" asp-validation-for="@Model.rank"></span>
+                    </div>
+
+
+                    <label class="ml-1" for="Img">Content Detail Image</label>
+                    <div class="input-group mb-4">
+
+                        <label class="img-label" for="Img">
+                            <div class="overlay">
+                            </div>
+                        </label>
+
+                        <input id="Img" type='file' accept='image/*' name="Img"  onchange='openFile(event)'>
+
+                        <div class="output-div" id="output-div">
+                            <div id="output-img-div">
+                                <img class="output-img" src="~/imgs/gallery/@Model.imagePath" alt="not found">
+                            </div>
+                            <img class="output" id='output'>
+                        </div>
+                        <span class="text-danger" asp-validation-for="@Model.imagePath"></span>
+                    </div>
+
+                    @if (ViewBag.images.Count > 0)
+                    {
+                        <div class="col-lg-6 mb-4" style="padding-left:0">
+                            <h4 class="header-title">Images</h4>
+                            <div class="single-table">
+                                <div class="table-responsive">
+                                    <table class="table text-center">
+                                        <thead class="text-uppercase bg-dark">
+                                            <tr class="text-white">
+                                                <th scope="col">Image</th>
+                                                <th scope="col">action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in ViewBag.images)
+                                            {
+                                                <tr>
+                                                    <td><img src="~/imgs/gallery/@item.imgPath" width="133px" /></td>
+                                                    <td>
+                                                        <a onclick="removeContentDetailImage(@item.id,this)" href="javascript:void(0)">
+                                                            <i class="ti-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class=" mb-5">
+
+                            <label class="multi-button" for="Images">
+                                <i class="ti-folder"></i>
+                                İçerik Resimlerine Ekle
+                            </label>
+                            <br>
+                            <input name="Images" type="file" id="Images" class="upload" accept="image/*" multiple />
+
+                            <div id="ImagesDiv" class="row column">                       
+                            </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="ContentId" class="col-form-label">Content </label>
+                        <select id="ContentId" name="contentId" class="form-control">
+                            <option selected value="@Model.contentId">@ViewBag.contentName</option>
+                            @await Component.InvokeAsync("SelectContents")
+                        </select>
+                        <span class="text-danger" asp-validation-for="@Model.contentId" class="text-danger mb-4"></span>
+
+                    </div>
+
+
+                    <div><button type="submit" class="btn btn-primary">submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+@section contentDetail_active{
+    class="active"
+}
+@section scripts{
+    <script src="~/dashboard/js/upload.js"></script>
+    <script>
+        var openFile = function (event) {
+
+            var input = event.target
+            var path = input.files[0].name
+            var extn = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+            if (extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
+                var reader = new FileReader()
+
+                reader.onload = function () {
+
+                    var dataURL = reader.result
+                    var output = document.getElementById('output')
+                    output.src = dataURL
+                    var outputDiv = document.getElementById("output-div")
+                    var outputImgDiv = document.getElementById("output-img-div")
+
+                    outputImgDiv.style.display = "none"
+                    output.style.display = "inline"
+
+                }
+                reader.readAsDataURL(input.files[0])
+            } else {
+                toastr.info("file must  be Image")
+            }
+        }
+        function removeContentDetailImage(id, element) {
+            if (id <= 0) {
+                toastr.warning("Something went wrong")
+            }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Dashboard/DeleteImage',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        if (result == "success") {
+                            element.parentElement.parentElement.remove()
+                            toastr.success("Image Deleted")
+                        }
+                        else {
+                            toastr.error("Something went wrong ")
+                        }
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong ")
+                    }
+                })
+            }
+        }
+        
+    </script>
+}
+@section links{
+    <link rel="stylesheet" href="~/dashboard/css/upload.css">
+    <style>
+
+        /*for images*/
+        input[type="file"] {
+            position: absolute;
+            left: -9999rem
+        }
+
+        .overlay {
+            opacity: 0;
+            background: gray;
+            position: absolute;
+            width: 23rem;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .img-label {
+            border: 2px solid var(--first);
+            display: inline-block;
+            position: absolute;
+            width: 23rem;
+            height: 14rem !important;
+            border-radius: .7rem;
+            cursor: pointer;
+        }
+
+            .img-label:hover #overlay {
+                opacity: 0.8;
+            }
+
+        .output {
+            display: none;
+            z-index: 5;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: 1rem;
+        }
+
+        .output-img {
+            background-position: center;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .output-div {
+            margin-bottom: .7rem;
+        }
+    </style>
+}

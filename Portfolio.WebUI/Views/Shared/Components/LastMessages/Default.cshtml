@@ -1,0 +1,52 @@
+﻿@model List<MessageListDto>
+
+
+<i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown">
+    <!-- notification icon -->
+    @await Component.InvokeAsync("MessageCount")
+</i>
+
+@if (Model.Count > 0)
+{
+     <div class="dropdown-menu notify-box nt-enveloper-box">
+        <span class="notify-title">
+            Your last @Model.Count  notifications 
+            <a asp-action="Messages" asp-controller="Dashboard">
+                view
+                all
+            </a>
+        </span>
+        <div class="nofity-list ">
+            @foreach (var msg in Model)
+            {
+                <a href="mailto:@msg.senderMail" title="click for reply to mail" class="notify-item">
+                    
+                    <div class="notify-text">
+                        <p class="font-weight-bold" style="color:black;font-size:large;">@msg.senderName</p>
+                        <span class="msg">@msg.messageContent</span>
+                        <span>@msg.date</span>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="dropdown-menu notify-box nt-enveloper-box">
+        
+        <div class="nofity-list">
+            
+                <a href="#" class="notify-item">
+                    
+                    <div class="notify-text">
+                        <p>You don't have a new message'</p>
+
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+}
+
+

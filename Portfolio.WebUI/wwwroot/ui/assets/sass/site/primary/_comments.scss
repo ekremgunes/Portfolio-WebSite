@@ -1,0 +1,333 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+.comment-content a {
+	word-wrap: break-word;
+}
+.comment-content {
+	font-size: 15px;
+	@media only screen and (min-width: 576px) {
+		font-size: 16px;
+	}
+	p {
+		line-height: 1.6em;
+	}
+    @media only screen and (max-width: 767px){
+        font-size: 15px;
+		margin-bottom: 15px;
+	}
+	ul, ol {
+		li {
+			margin-top: 10px;
+			line-height: 1.6em;
+		}
+	}
+	> ul,
+	> ol {
+		padding-left: 20px;
+	}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.bypostauthor {
+	display: block;
+}
+
+.cancel-comment-reply-link {
+	bottom: -2px;
+	display: inline-block;
+	left: 0.6em;
+	position: relative;
+}
+.logged-in-as {
+	margin-bottom: 0.7em !important;
+	padding: 0 15px;
+}
+.comments-area {
+	margin-top: 40px;
+	background-color: $white;
+	border-radius: 5px;
+	padding: 35px 15px;
+	@media only screen and (max-width: 576px) {
+		padding: 35px 20px;
+	}
+	@media only screen and (min-width: 768px) {
+		padding: 60px 55px 65px;
+		margin-top: 70px;
+	}
+	.comment-list, .children {
+		list-style: none;
+		padding: 0;
+	}
+    .comments-title {
+			font-size: 22px;
+			margin-bottom: 20px;
+			line-height: 1.35em;
+			font-weight: 800;
+			@media (min-width: 768px) {
+				font-size: 26px;
+				margin-bottom: 25px;
+			}
+			@media (min-width: 992px) {
+				font-size: 28px;
+				margin-bottom: 35px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 32px;
+			}
+    }
+	.comment-list {
+		margin-bottom: 0px;
+		border-top: none;
+		.comment .comment-respond {
+			margin-bottom: 75px;
+		}
+		> .comment:last-child {
+			.comment-body:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.comment-body {
+		overflow: hidden;
+		margin-bottom: 45px;
+		@media only screen and (min-width: 768px) {
+			margin-bottom: 60px;
+		}
+		.comment-meta {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+	}
+	.comment-author {
+	    float: left;
+	    margin-right: 15px;
+		width: 60px;
+		@media only screen and (min-width: 576px) {
+			margin-right: 20px;
+		}
+		.avatar {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+	.date {
+		display: block;
+		font-size: 14px;
+		color: #919090;
+		margin-top: 0;
+	}
+	.comment-details {
+		position: relative;
+		padding-left: 75px;
+		padding-top: 5px;
+		@media only screen and (min-width: 576px) {
+			padding-left: 80px;
+			padding-top: 15px;
+		}
+	}
+	.comment-metadata {
+			color: $color__heading; 
+	    .author {
+	    	font-size: 22px;
+				font-weight: 700;
+				font-family: $font_heading;
+				line-height: 1.25em;
+				display: inline-block;
+				margin-bottom: 5px;
+				@media only screen and (max-width: 767px) {
+					font-size: 17px;
+				}
+	    }
+	    .says, .comment-edit-link {
+	    	color: #777;
+	    }
+	}
+	.children {
+		margin-left: 108px;
+		@media only screen and (max-width: 1199px) {
+			margin-left: 90px;
+		}		
+		@media only screen and (max-width: 992px) {
+			margin-left: 75px;
+		}		
+		@media only screen and (max-width: 767px) {
+			margin-left: 50px;
+		}		
+		@media only screen and (max-width: 450px) {
+			margin-left: 30px;
+		}		
+		@media only screen and (max-width: 400px) {
+			margin-left: 25px;
+		}
+	}
+	.comment-navigation {
+		 margin-bottom: 3.5em;
+		.nav-links {
+			.nav-previous {
+				float: left;
+			}
+			.nav-next {
+				float: right;
+			}
+			span {
+				font-size: 18px;
+			}
+			a {
+				background-color: #232c3b;
+				color: white;
+				border-radius: 5px;
+			}	
+		}
+	}
+	
+}
+.comment-respond {
+	background-color: $white;
+	border-radius: 5px;
+	padding: 63px 55px 70px;
+	@media only screen and (max-width: 767px) {
+		padding: 35px 20px;
+	}
+	@media only screen and (max-width: 480px) {
+		padding: 35px 15px;
+	}
+	label {
+		font-weight: 500;
+	}
+	.comment-reply-title {
+		font-size: 22px;
+		margin-bottom: 18px;
+		line-height: 1.35em;
+		font-weight: 800;
+		@media (min-width: 768px) {
+			font-size: 26px;
+			margin-bottom: 20px;
+		}
+		@media (min-width: 992px) {
+			font-size: 28px;
+			margin-bottom: 35px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 32px;
+		}
+	}
+}
+
+.comment-respond {
+	margin: 55px 0px 0;
+	p {
+		margin-bottom: 1em;
+	}
+    [class*="col-"] {
+        margin-bottom: 22px;
+    }
+    textarea {
+        min-height: 160px;
+        max-width: 100%;
+    }
+	.form-submit {
+		margin-bottom: 0;
+		padding: 0 15px;
+		width: 100%;
+		padding-top: 5px;
+		text-align: center;
+		.btn-primary {
+			letter-spacing: 0.1em;
+			&:hover {
+				background-color: $black;
+			}
+		}
+	}
+	.comment-subscription-form {
+		display: none;
+	}
+	.comment-form-rating {
+		margin-bottom: 1em;
+	}
+	label {
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 500;
+		color: #3a3a3a;
+	}
+	.form-control {
+		background-color: transparent;
+		height: 46px;
+		border: 1px solid $color__border-three;
+		&:focus {
+			border-color: $color__primary;
+		}
+	}
+	#submit,
+	.submit {
+		border-color: $deep_cerise;
+		border-radius: 0;
+		background: $deep_cerise;
+		color: $white;
+		padding: 15px 45px;
+    	font-size: 16px;
+    	font-weight: bold;
+    	text-transform: uppercase;
+	}
+}
+#review_form {
+	.form-submit {
+		padding: 0;
+	}
+}
+
+.no-comments {
+	position: relative;
+	padding: 12px 20px;
+	padding: 12px 20px;
+	padding: 12px 20px;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 16px;
+	margin-bottom: 16px;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+}
+
+.comment-reply-link {
+    padding: 8px 22px;
+	font-size: 13px;
+	border: 1px solid $color__border-three;
+    line-height: normal;
+    font-weight: 700;
+    display: inline-block;
+    background-color: transparent;
+	color: $color__primary;
+	-webkit-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+	text-transform: uppercase;
+	font-family: $font_heading;
+	letter-spacing: 0.06em;
+	&:hover {
+		background: $color__primary;
+		color: $white;
+		border-color: $color__primary;
+	}
+	@media only screen and (min-width: 576px) {
+		position: absolute;
+		right: 0;
+		top: -50px;
+	}
+	@media only screen and (min-width: 992px) {
+		top: -60px;
+	}
+}

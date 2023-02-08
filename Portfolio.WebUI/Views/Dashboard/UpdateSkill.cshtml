@@ -1,0 +1,75 @@
+﻿@model SkillUpdateDto
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Update Skill</span></li>
+}
+<div class="card mt-5">
+    <div class="card-body">
+        <h4 class="header-title">Update  Skill</h4>
+
+        <form asp-controller="Dashboard" asp-action="UpdateSkill" method="post">
+            <div class="mb-4">
+                <label asp-for="@Model.skillName">Skill Name</label>
+                <input class="form-control" type="text" asp-for="@Model.skillName">
+                <span class="text-danger" asp-validation-for="@Model.skillName"></span>
+            </div>            
+            <div class="mb-4">
+                <label asp-for="@Model.rank">Skill Rank</label>
+                <input class="form-control" max="101" min="1" type="number" asp-for="@Model.rank">
+                <span class="text-danger" asp-validation-for="@Model.rank"></span>
+            </div>                
+            <label asp-for="@Model.skillPercent">Skill Percent</label>
+
+            <div class="row mb-4">
+
+                <div class="progress ml-3 col-7">
+                    <div class="progress-bar" role="progressbar" style="width: @(Model.skillPercent)%" ></div>
+                </div>
+            
+                <div class="col-4">
+                    <input class="form-control" onchange="progressUpdate(this)" max="101" min="1" type="number" asp-for="@Model.skillPercent">
+
+                </div>
+                <span class="text-danger" asp-validation-for="@Model.skillPercent"></span>
+
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+@section links{
+    <style>
+        .progress{
+            margin-top:.3rem;
+            height : 2.5rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .progress-bar{
+            background-color: #1117eaba;
+        }
+        .btn-primary{
+            background-color: #1117eaba;
+        }
+    </style>
+}
+@section skills_active{
+    class="active"
+}
+@section scripts{
+    <script>
+        const bar = document.querySelector(".progress-bar")
+        function progressUpdate(input){
+            if(input.value > 100 || input.value < 1){
+                toastr.warning("skill percent should be 1-100")
+                input.value = 20
+            }
+            bar.style.width = input.value + "%"
+        }
+    </script>
+}

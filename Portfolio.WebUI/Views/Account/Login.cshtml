@@ -1,0 +1,43 @@
+﻿@model AppUserLoginDto
+@{
+    Layout = "_AccountLayout";
+}
+@section title{
+    Login
+}
+
+
+    <!-- login area start -->
+    <div style="background :#19111c;" class="login-area login-bg">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form asp-action="Login" asp-controller="Account" method="post" >
+                    <div class="login-form-head">
+                        <h4>Login</h4>
+                        <p>Hello Sir, Sign in and start managing your Site</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="text-danger text-center m-1 mb-3" asp-validation-summary="All"></div>
+
+                        <div class="form-gp">
+                            <label asp-for="@Model.Name">User Name</label>
+                            <input asp-for="@Model.Name" type="text" >
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label asp-for="@Model.Password">Password</label>
+                            <input asp-for="@Model.Password" type="password" id="password_input">
+                            <i onclick="passwordDisplay()" class="ti-eye"></i>
+                        </div>
+
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+

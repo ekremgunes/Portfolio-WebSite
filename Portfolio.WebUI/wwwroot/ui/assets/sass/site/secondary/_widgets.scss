@@ -1,0 +1,101 @@
+.widget {
+	margin-bottom: 45px;
+	@media only screen and (min-width: 768px) {
+		margin-bottom: 60px;
+	}
+	select {
+		width: 100%;
+		border: 1px solid #ebebeb;
+		padding: 0.4em 0.8em;
+		outline: none;
+	}
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.widget-title-area {
+		position: relative;
+	}
+	.widget-title {
+		font-size: 20px;
+		font-weight: normal;
+		margin-bottom: 30px;
+		color: $color__heading;
+	}
+	pre {
+		padding: 0.5em;
+	}
+	label {
+		margin-bottom: 0;
+	}
+	option {
+		padding: 0.2em 1em;
+	}
+	input[type='text'],
+	input[type='email'],
+	input[type='url'],
+	input[type='password'],
+	input[type='search'],
+	textarea {
+		padding: 0.5em 1em;
+		&:focus {
+			box-shadow: none !important;
+		}
+	}
+}
+.sidebar-items {
+	padding: 40px 15px 5px;
+	background-color: $white;
+	@media only screen and (min-width: 768px) {
+		padding: 40px 25px 5px;
+	}
+	@media only screen and (min-width: 1200px) {
+		padding: 45px 45px 5px;
+	}
+	.widget {
+		margin-bottom: 40px;
+		@media only screen and (min-width: 768px) {
+			margin-bottom: 60px;
+		}
+		&.bt-instafeed-widget #instafeed-sidebar {
+			margin: -4px;
+			> .feed-item {
+				-moz-box-flex: 0;
+				flex: 0 0 33.33%;
+				max-width: 33.33%;
+				padding: 4px;
+			}
+		}
+	}
+	.widget-title {
+		font-size: 25px;
+		font-weight: 800;
+		margin-bottom: 30px;
+		color: $color__heading;
+		text-transform: capitalize;
+		border-bottom: 1px solid $color__border-two;
+		padding-bottom: 6px;
+		margin-top: -7px;
+		@media only screen and (max-width: 575px) {
+			font-size: 18px;
+		}
+	}
+	> .widget:last-of-type {
+		margin-bottom: 0;
+	}
+}
+.widget-title {
+	+ div,
+	+ ul,
+	+ select,
+	+ ol {
+		@media only screen and (max-width: 991px) {
+			margin-top: 30px;
+		}
+		@media only screen and (max-width: 767px) {
+			margin-top: 25px;
+		}
+	}
+}

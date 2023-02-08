@@ -1,0 +1,12 @@
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\bin\Debug\net6.0\Portfolio.Dtos.deps.json
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\bin\Debug\net6.0\Portfolio.Dtos.dll
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\bin\Debug\net6.0\Portfolio.Dtos.pdb
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.dll
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\refint\Portfolio.Dtos.dll
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\Portfolio.Dtos.pdb
+C:\Users\Lenovo\Desktop\lisanamedya\LisanaPortfolio\Portfolio.Dtos\obj\Debug\net6.0\ref\Portfolio.Dtos.dll

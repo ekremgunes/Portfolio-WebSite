@@ -1,0 +1,75 @@
+@model ContentDetailViewModel;
+@{
+    Layout = "_Layout";
+    var dto = Model.dto;
+    var footerModel = Model.footerViewModel;
+}
+@section logo_Area{
+    <img oncontextmenu="return false;" width="235px" src="~/imgs/gallery/@footerModel.SettingsDto.logoImgPath" alt="Site Logo" />
+}
+@section Header{
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Hero Block
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="hero-block" class="hero-block bg-image bg-overlay bg-parallax particles-version"
+     style=" background-image: url('/ui/imgs/black-background.png'); ">
+        <div id="particles-js"></div>
+        <div class="waves-effect bottom" style="background-image: url('/ui/imgs/shape.png');">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content-area">
+
+                        <h3 class="hero-title text-uppercase">
+                            @dto.contentName
+                        </h3><!-- /.hero-title -->
+
+
+                    </div><!-- /.hero-content-area -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.hero-block -->
+}
+<br>
+
+@if (dto.Details.Count == 0)
+{
+    <div>
+        <div class="col-12 container pd-y-40">
+            <img class="container" oncontextmenu="return false;" width="900px" src="~/imgs/gallery/@dto.imagePath">
+        </div>
+        <br>
+        <div>
+            <br>
+            <h2 style="text-align: center;">This Content Doesn't have detail</h2>
+            <br>
+        </div>
+        <br>
+    </div>
+}
+else
+{
+    <div class="container text-center">
+
+        @if (dto.Details.Count > 0)
+        {
+            foreach (var detail in dto.Details)
+            {
+
+                @await Html.PartialAsync("_detailOfContent",detail)
+
+            }
+
+        }
+
+    </div>
+
+}
+@section footer{
+
+    @await Html.PartialAsync("_footer",footerModel)
+}

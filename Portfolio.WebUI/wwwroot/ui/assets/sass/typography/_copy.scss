@@ -1,0 +1,107 @@
+/*-------------------------------------------------
+    [ ## Others Typography ]
+*/
+p { 
+	margin-bottom: 20px;
+	line-height: $font__line-height-paragraph;
+	&:last-child {
+			margin-bottom: 0px;
+	}
+	@media (min-width: 768px) {
+		margin-bottom: 22px;
+	}
+}
+a {
+	text-decoration: none;
+}
+blockquote {
+	margin: 0 0 1.3em;
+}
+address {
+	margin: 0 0 1.3em;
+}
+dfn {
+	font-size: 1em;
+}
+em {
+	@extend dfn;
+	font-style: italic;
+}
+cite {
+	@extend em;
+}
+i {
+	@extend em;
+}
+code {
+	@extend dfn;
+}
+kbd {
+	@extend dfn;
+}
+tt {
+	@extend dfn;
+}
+var {
+	@extend dfn;
+}
+
+abbr {
+	border-bottom: 1px dotted $dim_gray;
+	cursor: help;
+}
+acronym {
+	@extend abbr;
+}
+mark {
+	background: $corn_field;
+	text-decoration: none;
+}
+ins {
+	@extend mark;
+}
+big {
+	font-size: 125%;
+}
+
+pre {
+    background: $white_smoke;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.929em;
+    overflow: auto;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.dropcap {
+	display: block;
+	float: left;
+	margin: 15px 5px 0 0;
+	font-weight: bold;
+	font-size: 60px;
+	color: #ccc;
+}
+
+.el-text-rotation {
+	white-space: nowrap;
+    position: relative;
+    display: inline-block;	
+    .inner-el {
+    	text-transform: uppercase;
+    	letter-spacing: 0.015em;
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    }
+}

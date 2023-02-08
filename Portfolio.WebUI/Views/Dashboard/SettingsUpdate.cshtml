@@ -1,0 +1,345 @@
+﻿@model SettingsUpdateDto //model tanımlaması yapılabilirrr
+@{
+    Layout = "_PanelLayout";
+}
+@section page{
+    <li><span>Settings</span></li>
+}
+<div class="row">
+    <div class="col-12 mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-1">Settings</h4>
+                <br>
+                <form asp-action="SettingsUpdate" asp-controller="Dashboard" method="post" enctype="multipart/form-data">
+                    <div style="display:none">
+                        <input asp-for="@Model.id" value="1" type="hidden" />
+                        <input asp-for="@Model.aboutImgPath" value="@Model.aboutImgPath" type="hidden" />
+                        <input asp-for="@Model.sliderImgPath" value="@Model.sliderImgPath" type="hidden" />
+                        <input asp-for="@Model.logoImgPath" value="@Model.logoImgPath" type="hidden" />
+                        <input asp-for="@Model.seo" value="@Model.seo" type="hidden" />
+                        <input asp-for="@Model.visitorCount" value="@Model.visitorCount" type="hidden" />
+                        <input asp-for="@Model.visitorInteraction" value="@Model.visitorInteraction" type="hidden" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.slogan"></label>
+                        <input asp-for="@Model.slogan" class="form-control input-rounded" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.slogan"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.email"></label>
+                        <input asp-for="@Model.email" class="form-control input-rounded" type="email">
+                        <span class="text-danger" asp-validation-for="@Model.email"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.timedMessage"></label><br>
+                        <label class="switch ml-2">
+                            <input asp-for="@Model.timedMessage" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="text-danger" asp-validation-for="@Model.timedMessage"></span>
+                        @if (Model.timedMessage == true)
+                        {
+                            <p class="badge p-2 btn-xl ml-5 badge-success">Active</p>
+
+                        }
+                        else
+                        {
+                            <p class="badge p-2 btn-xl ml-5 badge-secondary">Passive</p>
+
+                        }
+                    </div>
+                    <label class="ml-1" for="logoImg">Logo</label>
+                    <div class="input-group mb-5">
+
+                        <label class="img-label" for="logoImg">
+                            <div class="overlay">
+                            </div>
+                        </label>
+
+                        <input id="logoImg" type='file' accept='image/*' name="logoImg"
+                               onchange='openFile3(event)'>
+
+                        <div class="output-div" id="output-div3">
+                            <div id="output-img-div3">
+                                <img class="output-img" src="~/imgs/gallery/@Model.logoImgPath" alt="not found">
+                            </div>
+                            <img class="output" id='output3'>
+                        </div>
+                        <span class="text-danger" asp-validation-for="@Model.logoImgPath"></span>
+                    </div>
+
+
+                    <h5 class="h5">Slider</h5>
+                    <br>
+                    <div class="mb-4 ">
+                        <label class="ml-1" asp-for="@Model.sliderHeader"></label>
+                        <input asp-for="@Model.sliderHeader" class="form-control input-rounded" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.sliderHeader"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.sliderServices"></label>
+                        <input asp-for="@Model.sliderServices" class="form-control input-rounded" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.sliderServices"></span>
+                    </div>
+
+                    <label class="ml-1" for="sliderImg">Slider Image</label>
+
+                    <div class="input-group mb-5">
+
+                        <label class="img-label" for="sliderImg">
+                            <div class="overlay">
+                            </div>
+                        </label>
+
+                        <input id="sliderImg" type='file' accept='image/*' name="sliderImg"
+                               onchange='openFile(event)'>
+
+                        <div class="output-div" id="output-div">
+                            <div id="output-img-div">
+                                <img class="output-img" src="~/imgs/gallery/@Model.sliderImgPath" alt="not found">
+                            </div>
+                            <img class="output" id='output'>
+                        </div>
+                        <span class="text-danger" asp-validation-for="@Model.sliderImgPath"></span>
+                    </div>
+
+                    <h5 class="h5">About</h5>
+                    <br>
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.aboutHeader"></label>
+                        <input asp-for="@Model.aboutHeader" class="form-control input-rounded" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.aboutHeader"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="ml-1" asp-for="@Model.aboutContent"></label>
+                        <input asp-for="@Model.aboutContent" class="form-control input-rounded" type="text">
+                        <span class="text-danger" asp-validation-for="@Model.aboutContent"></span>
+                    </div>
+
+                    <label class="ml-1" for="aboutImg">About Image</label>
+
+                    <div class="input-group mb-5">
+
+                        <label class="img-label" for="aboutImg">
+                            <div class="overlay">
+                            </div>
+                        </label>
+
+                        <input id="aboutImg" type='file' accept='image/*' name="aboutImg"
+                               onchange='openFile2(event)'>
+
+                        <div class="output-div" id="output-div2">
+                            <div id="output-img-div2">
+                                <img class="output-img" src="~/imgs/gallery/@Model.aboutImgPath" alt="not found">
+                            </div>
+                            <img class="output" id='output2'>
+                        </div>
+                        <span class="text-danger" asp-validation-for="@Model.aboutImgPath"></span>
+                    </div>
+
+                    <h5 class="h5">Social Media</h5>
+                    <br>
+                    <div class="mb-4 row">
+                        <div class="col-8">
+                            <label class="ml-1" asp-for="@Model.instagramUrl"></label> <i class=" ti-instagram "></i>
+                            <input asp-for="@Model.instagramUrl" class="form-control input-rounded" type="text">
+                            <span class="text-danger" asp-validation-for="@Model.instagramUrl"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="@Model.instagramVisibility"></label><br>
+                            <label class="switch mt-2">
+                                <input asp-for="@Model.instagramVisibility" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="text-danger" asp-validation-for="@Model.instagramVisibility"></span>
+                        </div>
+
+                    </div>
+                    <div class="mb-4 row">
+                        <div class="col-8">
+                            <label class="ml-1" asp-for="@Model.twitterUrl"></label> <i class=" ti-twitter "></i>
+                            <input asp-for="@Model.twitterUrl" class="form-control input-rounded" type="text">
+                            <span class="text-danger" asp-validation-for="@Model.twitterUrl"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="@Model.twitterVisibility"></label><br>
+                            <label class="switch mt-2">
+                                <input asp-for="@Model.twitterVisibility" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="text-danger" asp-validation-for="@Model.twitterVisibility"></span>
+                        </div>
+
+                    </div>
+                    <div class="mb-4 row">
+                        <div class="col-8">
+                            <label class="ml-1" asp-for="@Model.facebookUrl"></label> <i class=" ti-facebook "></i>
+                            <input asp-for="@Model.facebookUrl" class="form-control input-rounded" type="text">
+                            <span class="text-danger" asp-validation-for="@Model.facebookUrl"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="@Model.facebookVisibility"></label><br>
+                            <label class="switch mt-2">
+                                <input asp-for="@Model.facebookVisibility" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="text-danger" asp-validation-for="@Model.facebookVisibility"></span>
+                        </div>
+
+                    </div>
+
+                    <div><button type="submit" class="btn btn-primary">submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+@section settings_active{
+    class="active"
+}
+@section scripts{
+    <script>
+        var openFile = function (event) {
+
+            var input = event.target
+            var path =input.files[0].name
+            var extn = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+            if (extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
+                var reader = new FileReader()
+
+                reader.onload = function () {
+
+                    var dataURL = reader.result
+                    var output = document.getElementById('output')
+                    output.src = dataURL
+                    var outputDiv = document.getElementById("output-div")
+                    var outputImgDiv = document.getElementById("output-img-div")
+
+                    outputImgDiv.style.display = "none"
+                    output.style.display = "inline"
+
+                }
+                reader.readAsDataURL(input.files[0])
+            } else {
+                toastr.info("file must  be Image")
+            }
+        }
+
+        //second img
+
+        var openFile2 = function (event) {
+
+            var input = event.target
+            var path = input.files[0].name
+            var extn = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+
+            if (extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
+                var reader = new FileReader()
+
+                reader.onload = function () {
+
+                    var dataURL = reader.result
+                    var output = document.getElementById('output2')
+                    output.src = dataURL
+                    var outputDiv = document.getElementById("output-div2")
+                    var outputImgDiv = document.getElementById("output-img-div2")
+
+                    outputImgDiv.style.display = "none"
+                    output.style.display = "inline"
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                toastr.info("file must  be Image")
+            }
+        };
+        //third img
+
+        var openFile3 = function (event) {
+
+            var input = event.target
+            var path = input.files[0].name
+            var extn = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+
+            if (extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
+                var reader = new FileReader()
+                reader.onload = function () {
+
+                    var dataURL = reader.result
+                    var output = document.getElementById('output3')
+                    output.src = dataURL
+                    var outputDiv = document.getElementById("output-div3")
+                    var outputImgDiv = document.getElementById("output-img-div3")
+
+                    outputImgDiv.style.display = "none"
+                    output.style.display = "inline"
+
+                }
+                reader.readAsDataURL(input.files[0])
+                console.log(input.files[0])
+            } else {
+                toastr.info("file must  be Image")
+            }
+
+        }
+    </script>
+}
+@section links{
+    <style>
+
+        /*for images*/
+        input[type="file"] {
+            position: absolute;
+            left: -9999rem
+        }
+
+        .overlay {
+            opacity: 0;
+            background: gray;
+            position: absolute;
+            width: 23rem;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .img-label {
+            border: 2px solid var(--first);
+            display: inline-block;
+            position: absolute;
+            width: 23rem;
+            height: 14rem !important;
+            border-radius: .7rem;
+            cursor: pointer;
+        }
+
+            .img-label:hover #overlay {
+                opacity: 0.8;
+            }
+
+        .output {
+            display: none;
+            z-index: 5;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: 1rem;
+        }
+
+        .output-img {
+            background-position: center;
+            width: 23rem !important;
+            height: auto !important;
+            border-radius: .7rem;
+        }
+
+        .output-div {
+            margin-bottom: .7rem;
+        }
+    </style>
+}
