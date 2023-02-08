@@ -7,7 +7,6 @@ MVC ,<br>
  ->ViewComponents<br>
 AJAX ,<br>
 N-Tier Architecture ,<br>
-JWT,<br>
 EntityFramework (MSSQL),<br>
 Identity ,<br>
 FluentAPI,<br>
