@@ -1,5 +1,5 @@
 
-                                                  Portfolio Web Site 
+                                                  Portfolio Project
   <h4>Technologies :</h4>
 <hr>
 dotnet6 ,<br>
