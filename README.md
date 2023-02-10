@@ -28,7 +28,7 @@ asdf
 
 ##Some examples
 
-FluentAPI : 
+> FluentAPI : 
 
 ```c#
     public class ImageConfigurations : IEntityTypeConfiguration<Image>
@@ -43,8 +43,8 @@ FluentAPI :
 ```
 
 
-İ tried SOLİD,DRY and Yagni principles <br>
-Unit Of Work : 
+I tried SOLİD,DRY and Yagni principles <br>
+> Unit Of Work : 
 
 ```c#
     public class Uow : IUow 
