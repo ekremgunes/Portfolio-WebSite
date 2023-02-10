@@ -1,7 +1,7 @@
 
                                                   Portfolio Project
+![](https://github.com/ekremgunes/PortfolioProject/blob/master/panel_111.gif)
 ![](https://github.com/ekremgunes/PortfolioProject/blob/master/panel_222.gif)
-
 ```
 I used these technologies dotnet6 ,MVC -> ViewComponents ,
 AJAX ,
