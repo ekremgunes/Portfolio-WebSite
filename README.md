@@ -2,11 +2,13 @@
                                                   Portfolio Project
 ![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
 ```
-I used these technologies dotnet6 ,MVC -> ViewComponents<AJAX ,
+I used these technologies dotnet6 ,MVC -> ViewComponents ,
+AJAX ,
 N-Tier Architecture ,
 EntityFramework (MSSQL) ,
 Identity ,
 AutoMapper ,
+I tried SOLİD,DRY and Yagni principles ,
 Error Handling Manually .
 ```
 <br>
@@ -25,11 +27,8 @@ Error Handling Manually .
         }
     }
 ```
-
-
-I tried SOLİD,DRY and Yagni principles <br>
-
 > Clean code :
+
 ```c#
   public bool ContentIsValid(ContentCreateDto dto) => _createContentValidator.Validate(dto).IsValid;
 
