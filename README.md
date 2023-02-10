@@ -1,6 +1,6 @@
 
                                                   Portfolio Project
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/ekremgunes/PortfolioProject/blob/master/panel_222.gif))
+![](https://github.com/ekremgunes/PortfolioProject/blob/master/panel_222.gif)
 
 ```
 I used these technologies dotnet6 ,MVC -> ViewComponents ,
