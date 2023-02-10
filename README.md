@@ -1,32 +1,16 @@
 
                                                   Portfolio Project
-I used dotnet6 ,MVC ->ViewComponents<br>
-AJAX ,<br>
-N-Tier Architecture ,<br>
-EntityFramework (MSSQL),<br>
-Identity ,<br>
-AutoMapper,<br>
-Error Handling Manually<br>
-#UI
-adsfasdf
-asd
-fasd
-f
-asdf
-as
-df
-asd
-f
-asd
-f
-ads
-fas
-df
-sda
-sdf
-asdf
+![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+```
+I used these technologies dotnet6 ,MVC -> ViewComponents<AJAX ,
+N-Tier Architecture ,
+EntityFramework (MSSQL) ,
+Identity ,
+AutoMapper ,
+Error Handling Manually .
+```
+<br>
 
-##Some examples
 
 > FluentAPI : 
 
@@ -67,7 +51,7 @@ I tried SOLİD,DRY and Yagni principles <br>
         }
     }
 ```
-Fluent Validation :
+> Fluent Validation :
 ```c#
     public class ServiceUpdateDtoValidator : AbstractValidator<ServiceUpdateDto>
     {
@@ -80,7 +64,7 @@ Fluent Validation :
         }
     }
 ```
-Clean code :
+> Clean code :
 ```c#
   public bool ContentIsValid(ContentCreateDto dto) => _createContentValidator.Validate(dto).IsValid;
 
