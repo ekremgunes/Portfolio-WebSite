@@ -1,7 +1,5 @@
 
                                                   Portfolio Project
-  <h4>I used :</h4>
-<hr>
 dotnet6 ,<br>
 MVC ,<br>
  ->ViewComponents<br>
