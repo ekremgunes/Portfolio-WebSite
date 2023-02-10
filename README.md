@@ -28,6 +28,14 @@ Error Handling Manually .
 
 
 I tried SOLİD,DRY and Yagni principles <br>
+
+> Clean code :
+```c#
+  public bool ContentIsValid(ContentCreateDto dto) => _createContentValidator.Validate(dto).IsValid;
+
+  public bool ContentUpdateIsValid(ContentUpdateDto dto) => _updateContentValidator.Validate(dto).IsValid;
+```
+
 > Unit Of Work : 
 
 ```c#
@@ -64,9 +72,4 @@ I tried SOLİD,DRY and Yagni principles <br>
         }
     }
 ```
-> Clean code :
-```c#
-  public bool ContentIsValid(ContentCreateDto dto) => _createContentValidator.Validate(dto).IsValid;
 
-  public bool ContentUpdateIsValid(ContentUpdateDto dto) => _updateContentValidator.Validate(dto).IsValid;
-```
