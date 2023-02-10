@@ -1,16 +1,32 @@
 
                                                   Portfolio Project
-dotnet6 ,<br>
-MVC ,<br>
- ->ViewComponents<br>
+I used dotnet6 ,MVC ->ViewComponents<br>
 AJAX ,<br>
 N-Tier Architecture ,<br>
 EntityFramework (MSSQL),<br>
 Identity ,<br>
 AutoMapper,<br>
 Error Handling Manually<br>
+#UI
+adsfasdf
+asd
+fasd
+f
+asdf
+as
+df
+asd
+f
+asd
+f
+ads
+fas
+df
+sda
+sdf
+asdf
 
-<h5>Some examples</h5>
+##Some examples
 
 FluentAPI : 
 
