@@ -10,7 +10,8 @@ EntityFramework (MSSQL) ,
 Identity ,
 AutoMapper ,
 I tried SOLİD,DRY and Yagni principles ,
-Error Handling Manually .
+Error Handling Manually 
+`app.UseStatusCodePagesWithReExecute("/Error/Error", "?code={0}"); // status page`.
 ```
 <br>
 
