@@ -28,7 +28,7 @@ Error Handling Manually
         }
     }
 ```
-> Clean code :
+> Clean code examples:
 
 ```c#
   public bool ContentIsValid(ContentCreateDto dto) => _createContentValidator.Validate(dto).IsValid;
